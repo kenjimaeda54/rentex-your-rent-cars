@@ -79,6 +79,19 @@ class HomeTableViewController: UITableViewController {
 		return cell
 	}
 	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let carsSelected = cars[indexPath.row]
+		performSegue(withIdentifier: "detailsSegue", sender: carsSelected)
+	}
+	
+   
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "detailsSegue" {
+			let vc = segue.destination as! DetailsCarViewController
+			vc.car = sender as? CarsModel
+		}
+	}
 	
 	
 }

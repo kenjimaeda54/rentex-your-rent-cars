@@ -37,7 +37,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="cff-df-Wq8"/>
                     <connections>
-                        <segue destination="I5o-Is-zx0" kind="show" id="U2g-E5-bKU"/>
+                        <segue destination="I5o-Is-zx0" kind="show" identifier="detailsSegue" id="U2g-E5-bKU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ag-qX-0SA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -205,6 +205,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zcl-dg-hbX"/>
+                    <connections>
+                        <outlet property="imgCar" destination="NPg-Up-JKO" id="EIf-6Z-e9v"/>
+                        <outlet property="labBrand" destination="tGb-qc-C4V" id="l3P-JP-jZ4"/>
+                        <outlet property="labDay" destination="3oR-jy-5Kg" id="DmL-s2-MIe"/>
+                        <outlet property="labDescription" destination="oYP-4g-yuj" id="U4g-Hs-Bpj"/>
+                        <outlet property="labName" destination="gZt-ke-kqH" id="aU6-Xa-tDH"/>
+                        <outlet property="labPrice" destination="EOl-26-vfn" id="14r-MG-WYv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZK-2Z-u60" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -31,7 +31,7 @@ class CarTableViewCell: UITableViewCell {
 		imgTypeFuel.image = UIImage(named: cars.fuelType)
 		labModel.text = cars.name
 		labBrand.text = cars.brand
-		labDayValue.text = "\(cars.rent.price)"
+		labDayValue.text = "R$\(cars.rent.price)"
 		labDay.text = cars.rent.period
 	}
 	
