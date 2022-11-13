@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38698E1C26F126DCDBD1E4C7 /* Pods_rentex_rent_car.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B318E055E107B925F32C67E /* Pods_rentex_rent_car.framework */; };
 		810E3C25292055D000AF1BCC /* CarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810E3C23292055D000AF1BCC /* CarTableViewCell.swift */; };
 		810E3DBB2920593700AF1BCC /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 810E3DB22920593700AF1BCC /* Inter-Regular.ttf */; };
 		810E3DBC2920593700AF1BCC /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 810E3DB32920593700AF1BCC /* Inter-Light.ttf */; };
@@ -45,9 +46,14 @@
 		81B42407292051C700EE4F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B42405292051C700EE4F58 /* Main.storyboard */; };
 		81B42409292051C800EE4F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B42408292051C800EE4F58 /* Assets.xcassets */; };
 		81B4240C292051C800EE4F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B4240A292051C800EE4F58 /* LaunchScreen.storyboard */; };
+		81D2DE7E2921619A009D9A97 /* DetailsCarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2DE7D2921619A009D9A97 /* DetailsCarCollectionViewCell.swift */; };
+		81D2DE8029216753009D9A97 /* DetailsCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2DE7F29216753009D9A97 /* DetailsCarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B318E055E107B925F32C67E /* Pods_rentex_rent_car.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rentex_rent_car.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EDEB9CAB2C68367A2396849 /* Pods-rentex rent car.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rentex rent car.debug.xcconfig"; path = "Target Support Files/Pods-rentex rent car/Pods-rentex rent car.debug.xcconfig"; sourceTree = "<group>"; };
+		7F9A49B94DA45029C2F31E7D /* Pods-rentex rent car.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rentex rent car.release.xcconfig"; path = "Target Support Files/Pods-rentex rent car/Pods-rentex rent car.release.xcconfig"; sourceTree = "<group>"; };
 		810E3C23292055D000AF1BCC /* CarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTableViewCell.swift; sourceTree = "<group>"; };
 		810E3DB22920593700AF1BCC /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		810E3DB32920593700AF1BCC /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Light.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Light.ttf"; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 		81B42408292051C800EE4F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81B4240B292051C800EE4F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81B4240D292051C800EE4F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81D2DE7D2921619A009D9A97 /* DetailsCarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCarCollectionViewCell.swift; sourceTree = "<group>"; };
+		81D2DE7F29216753009D9A97 /* DetailsCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +103,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38698E1C26F126DCDBD1E4C7 /* Pods_rentex_rent_car.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D226F2BEAF00F85450DAB42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B318E055E107B925F32C67E /* Pods_rentex_rent_car.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		810E3DB12920592500AF1BCC /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				810E3C23292055D000AF1BCC /* CarTableViewCell.swift */,
+				81D2DE7D2921619A009D9A97 /* DetailsCarCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -147,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				810E3DEF2920631700AF1BCC /* HomeTableViewController.swift */,
+				81D2DE7F29216753009D9A97 /* DetailsCarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,11 +187,20 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		81142C3F29211C7D009851A6 /* ImageBundle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageBundle;
+			sourceTree = "<group>";
+		};
 		81B423F3292051C700EE4F58 = {
 			isa = PBXGroup;
 			children = (
 				81B423FE292051C700EE4F58 /* rentex rent car */,
 				81B423FD292051C700EE4F58 /* Products */,
+				CDEAB345E6747C8448CAB78E /* Pods */,
+				7D226F2BEAF00F85450DAB42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +217,7 @@
 			children = (
 				81B423FF292051C700EE4F58 /* AppDelegate.swift */,
 				81B42401292051C700EE4F58 /* SceneDelegate.swift */,
+				81142C3F29211C7D009851A6 /* ImageBundle */,
 				81142C3C29210F04009851A6 /* Factories */,
 				810E3DF1292064F300AF1BCC /* Models */,
 				810E3DEC2920624E00AF1BCC /* Controllers */,
@@ -211,6 +240,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CDEAB345E6747C8448CAB78E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4EDEB9CAB2C68367A2396849 /* Pods-rentex rent car.debug.xcconfig */,
+				7F9A49B94DA45029C2F31E7D /* Pods-rentex rent car.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81B42410292051C800EE4F58 /* Build configuration list for PBXNativeTarget "rentex rent car" */;
 			buildPhases = (
+				535A93BDEC52E87800709582 /* [CP] Check Pods Manifest.lock */,
 				81B423F8292051C700EE4F58 /* Sources */,
 				81B423F9292051C700EE4F58 /* Frameworks */,
 				81B423FA292051C700EE4F58 /* Resources */,
+				5F9CFF47961DD01CC0ACE009 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,6 +345,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		535A93BDEC52E87800709582 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rentex rent car-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F9CFF47961DD01CC0ACE009 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rentex rent car/Pods-rentex rent car-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rentex rent car/Pods-rentex rent car-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rentex rent car/Pods-rentex rent car-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		81B423F8292051C700EE4F58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -312,10 +394,12 @@
 			files = (
 				81142C3E29210F15009851A6 /* Factories.swift in Sources */,
 				810E3DF5292066BD00AF1BCC /* SchedulesByCars.swift in Sources */,
+				81D2DE8029216753009D9A97 /* DetailsCarViewController.swift in Sources */,
 				810E3DF02920631700AF1BCC /* HomeTableViewController.swift in Sources */,
 				810E3DF32920650000AF1BCC /* CarsModel.swift in Sources */,
 				81B42400292051C700EE4F58 /* AppDelegate.swift in Sources */,
 				81B42402292051C700EE4F58 /* SceneDelegate.swift in Sources */,
+				81D2DE7E2921619A009D9A97 /* DetailsCarCollectionViewCell.swift in Sources */,
 				810E3C25292055D000AF1BCC /* CarTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +551,7 @@
 		};
 		81B42411292051C800EE4F58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EDEB9CAB2C68367A2396849 /* Pods-rentex rent car.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -501,6 +586,7 @@
 		};
 		81B42412292051C800EE4F58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F9A49B94DA45029C2F31E7D /* Pods-rentex rent car.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

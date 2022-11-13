@@ -33,7 +33,6 @@ class HomeTableViewController: UITableViewController {
 		background.addSubview(imgLogotipo)
 		background.addSubview(labQuantityCars)
 		background.translatesAutoresizingMaskIntoConstraints = false
-
 		
 		navigationController?.navigationBar.addSubview(background)
 		
