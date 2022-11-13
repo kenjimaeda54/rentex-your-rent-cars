@@ -13,7 +13,7 @@
             <objects>
                 <tableViewController id="vdd-je-Rce" customClass="HomeTableViewController" customModule="rentex_rent_car" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0AQ-N7-aBd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="701"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="gray100"/>
                         <connections>
@@ -32,9 +32,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y00-1c-hHd" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHw-lx-cEk">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="wHw-lx-cEk">
+                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="black"/>
+                        <color key="barTintColor" name="black"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -46,7 +48,11 @@
             <point key="canvasLocation" x="-1312.3076923076922" y="79.620853080568722"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="black"/>
     <resources>
+        <namedColor name="black">
+            <color red="0.10588235294117647" green="0.10588235294117647" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="gray100">
             <color red="0.95686274509803926" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

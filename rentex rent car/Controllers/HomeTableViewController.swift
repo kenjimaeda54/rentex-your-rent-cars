@@ -19,6 +19,49 @@ class HomeTableViewController: UITableViewController {
 		super.viewDidLoad()
 		
 		tableView.register(UINib(nibName: "CarTableViewCell", bundle: nil),forCellReuseIdentifier: "cellCars")
+	    
+		 prepareViewNavigation()
+//		navigationController?.navigationBar.addSubview(prepareViewNavigation())
+		
+	}
+	
+	func prepareViewNavigation()  {
+		let background = UIView()
+		let imgLogotipo = makeImg("logotipo")
+		let labQuantityCars = makeLabel("Total de 12 carros")
+	
+		background.addSubview(imgLogotipo)
+		background.addSubview(labQuantityCars)
+		background.translatesAutoresizingMaskIntoConstraints = false
+
+		
+		navigationController?.navigationBar.addSubview(background)
+		
+				if let navigationView = navigationController?.navigationBar {
+			NSLayoutConstraint.activate([
+				
+				
+				background.topAnchor.constraint(equalTo: navigationView.topAnchor, constant: 0),
+				background.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor,constant: 0),
+				background.trailingAnchor.constraint(equalTo: navigationView.trailingAnchor,constant: 0),
+				background.leadingAnchor.constraint(equalTo: navigationView.leadingAnchor, constant: 0),
+				
+				
+				imgLogotipo.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 18),
+				imgLogotipo.bottomAnchor.constraint(equalTo: background.bottomAnchor,constant: -32),
+				imgLogotipo.trailingAnchor.constraint(lessThanOrEqualTo: labQuantityCars.leadingAnchor, constant: 80),
+				imgLogotipo.topAnchor.constraint(equalTo: background.topAnchor,constant: 20),
+				
+				labQuantityCars.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -18),
+				labQuantityCars.bottomAnchor.constraint(equalTo: background.bottomAnchor,constant: -32),
+				labQuantityCars.topAnchor.constraint(equalTo: background.topAnchor,constant: 20),
+				
+				
+			])
+			
+		}
+		
+		
 	}
 	
 	// MARK: - Table view data source
