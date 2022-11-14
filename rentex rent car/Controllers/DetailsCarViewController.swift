@@ -47,6 +47,11 @@ class DetailsCarViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		 super.viewWillAppear(animated)
+ 
+		//remover o titulo de back
+		//https://stackoverflow.com/questions/23853617/uinavigationbar-hide-back-button-text
+		self.navigationController?.navigationBar.topItem?.title = "";
+
 		
 		if let navigation = navigationController?.navigationBar {
 			makeNavigationController(color: "white", navigation: navigation)

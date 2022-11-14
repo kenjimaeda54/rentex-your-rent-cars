@@ -49,32 +49,32 @@
             <objects>
                 <viewController id="I5o-Is-zx0" customClass="DetailsCarViewController" customModule="rentex_rent_car" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Spb-fA-fsZ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="701"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Corvete" translatesAutoresizingMaskIntoConstraints="NO" id="NPg-Up-JKO">
-                                <rect key="frame" x="16" y="16" width="358" height="165.66666666666666"/>
+                                <rect key="frame" x="16" y="15.999999999999986" width="358" height="232.66666666666663"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CHEVROLET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGb-qc-C4V">
-                                <rect key="frame" x="16.000000000000004" y="230.66666666666669" width="61.333333333333343" height="16"/>
+                                <rect key="frame" x="16.000000000000004" y="297.66666666666669" width="61.333333333333343" height="16"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="10"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AO DIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oR-jy-5Kg">
-                                <rect key="frame" x="340" y="230.66666666666669" width="34" height="11"/>
+                                <rect key="frame" x="340" y="297.66666666666669" width="34" height="11"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="10"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 580" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOl-26-vfn">
-                                <rect key="frame" x="294.66666666666669" y="251.66666666666671" width="79.333333333333314" height="27.333333333333343"/>
+                                <rect key="frame" x="294.66666666666669" y="318.66666666666669" width="79.333333333333314" height="27.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="25"/>
                                 <color key="textColor" name="red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-0g-ruK">
-                                <rect key="frame" x="16" y="294" width="358" height="195"/>
+                                <rect key="frame" x="16" y="346" width="358" height="195"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="DOr-ya-bY5"/>
@@ -94,10 +94,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mpd-nC-nrU">
-                                                    <rect key="frame" x="10" y="10" width="99" height="80"/>
+                                                    <rect key="frame" x="0.0" y="10" width="119" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 pessoas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MO-lp-b6U">
-                                                            <rect key="frame" x="10.666666666666664" y="43" width="77.666666666666686" height="21"/>
+                                                            <rect key="frame" x="10.666666666666664" y="43" width="97.666666666666686" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="AcK-NN-jPc"/>
                                                             </constraints>
@@ -106,7 +106,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gasolina" translatesAutoresizingMaskIntoConstraints="NO" id="PMh-Xd-WMq">
-                                                            <rect key="frame" x="38" y="10" width="23" height="23"/>
+                                                            <rect key="frame" x="38" y="10" width="43" height="23"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" name="gray100"/>
@@ -123,9 +123,9 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mpd-nC-nrU" firstAttribute="top" secondItem="JIB-4B-jay" secondAttribute="top" constant="10" id="Qej-3F-cG6"/>
-                                                <constraint firstItem="mpd-nC-nrU" firstAttribute="leading" secondItem="JIB-4B-jay" secondAttribute="leading" constant="10" id="abu-ZP-rFE"/>
+                                                <constraint firstItem="mpd-nC-nrU" firstAttribute="leading" secondItem="JIB-4B-jay" secondAttribute="leading" id="abu-ZP-rFE"/>
                                                 <constraint firstAttribute="bottom" secondItem="mpd-nC-nrU" secondAttribute="bottom" constant="10" id="jB9-W3-qta"/>
-                                                <constraint firstAttribute="trailing" secondItem="mpd-nC-nrU" secondAttribute="trailing" constant="10" id="zN9-i9-RUQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="mpd-nC-nrU" secondAttribute="trailing" id="zN9-i9-RUQ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="119" height="100"/>
@@ -141,18 +141,21 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-4g-yuj">
-                                <rect key="frame" x="16" y="513" width="358" height="72.666666666666629"/>
+                                <rect key="frame" x="16" y="556" width="358" height="83"/>
                                 <string key="text">Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.</string>
                                 <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="15"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HX1-8A-bP7">
-                                <rect key="frame" x="0.0" y="607.33333333333337" width="390" height="93.666666666666629"/>
+                                <rect key="frame" x="0.0" y="649" width="390" height="104"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InT-iX-EbS">
-                                        <rect key="frame" x="24" y="23.999999999999996" width="342" height="45.666666666666657"/>
+                                        <rect key="frame" x="24" y="24" width="342" height="56"/>
                                         <color key="backgroundColor" name="red"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="13o-GM-dPF"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Escolher período do aluguel">
                                             <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
@@ -168,7 +171,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corvette Z06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZt-ke-kqH">
-                                <rect key="frame" x="16" y="251.66666666666671" width="147" height="27.333333333333343"/>
+                                <rect key="frame" x="16" y="318.66666666666669" width="147" height="27.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="25"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
@@ -178,7 +181,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WBe-ST-GMZ" firstAttribute="trailing" secondItem="NPg-Up-JKO" secondAttribute="trailing" constant="16" id="32J-KW-ngN"/>
-                            <constraint firstItem="oYP-4g-yuj" firstAttribute="top" secondItem="2oz-0g-ruK" secondAttribute="bottom" constant="24" id="AiE-Kl-xlw"/>
+                            <constraint firstItem="oYP-4g-yuj" firstAttribute="top" relation="lessThanOrEqual" secondItem="2oz-0g-ruK" secondAttribute="bottom" constant="15" id="AiE-Kl-xlw"/>
                             <constraint firstItem="EOl-26-vfn" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gZt-ke-kqH" secondAttribute="trailing" constant="8" symbolic="YES" id="Bzd-SX-nox"/>
                             <constraint firstItem="3oR-jy-5Kg" firstAttribute="trailing" secondItem="NPg-Up-JKO" secondAttribute="trailing" id="C1q-qu-uWQ"/>
                             <constraint firstItem="HX1-8A-bP7" firstAttribute="leading" secondItem="WBe-ST-GMZ" secondAttribute="leading" id="Ecf-WN-VGr"/>
@@ -191,7 +194,7 @@
                             <constraint firstItem="NPg-Up-JKO" firstAttribute="leading" secondItem="WBe-ST-GMZ" secondAttribute="leading" constant="16" id="Ul2-dz-3rQ"/>
                             <constraint firstAttribute="bottom" secondItem="HX1-8A-bP7" secondAttribute="bottom" id="Uv5-ug-1hH"/>
                             <constraint firstItem="tGb-qc-C4V" firstAttribute="leading" secondItem="NPg-Up-JKO" secondAttribute="leading" id="WNv-cg-fkl"/>
-                            <constraint firstItem="2oz-0g-ruK" firstAttribute="top" secondItem="gZt-ke-kqH" secondAttribute="bottom" constant="15" id="WcF-xW-vOD"/>
+                            <constraint firstItem="2oz-0g-ruK" firstAttribute="top" relation="lessThanOrEqual" secondItem="gZt-ke-kqH" secondAttribute="bottom" id="WcF-xW-vOD"/>
                             <constraint firstItem="gZt-ke-kqH" firstAttribute="leading" secondItem="tGb-qc-C4V" secondAttribute="leading" id="cfg-gJ-Gt2"/>
                             <constraint firstItem="oYP-4g-yuj" firstAttribute="trailing" secondItem="NPg-Up-JKO" secondAttribute="trailing" id="iqy-Q7-dm3"/>
                             <constraint firstItem="3oR-jy-5Kg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tGb-qc-C4V" secondAttribute="trailing" constant="8" symbolic="YES" id="mRK-RU-QkZ"/>
@@ -200,11 +203,11 @@
                             <constraint firstItem="WBe-ST-GMZ" firstAttribute="bottom" secondItem="2oz-0g-ruK" secondAttribute="bottom" constant="178" id="r5I-yI-C1u"/>
                             <constraint firstItem="gZt-ke-kqH" firstAttribute="top" secondItem="tGb-qc-C4V" secondAttribute="bottom" constant="5" id="rLa-kq-hZt"/>
                             <constraint firstItem="tGb-qc-C4V" firstAttribute="top" relation="lessThanOrEqual" secondItem="NPg-Up-JKO" secondAttribute="bottom" constant="49" id="s18-ZZ-cTd"/>
-                            <constraint firstItem="HX1-8A-bP7" firstAttribute="top" secondItem="oYP-4g-yuj" secondAttribute="bottom" constant="21.666666666666629" id="sRu-0q-a3X"/>
+                            <constraint firstItem="HX1-8A-bP7" firstAttribute="top" relation="lessThanOrEqual" secondItem="oYP-4g-yuj" secondAttribute="bottom" constant="10" id="sRu-0q-a3X"/>
                             <constraint firstItem="EOl-26-vfn" firstAttribute="bottom" secondItem="gZt-ke-kqH" secondAttribute="bottom" id="vh2-gz-3wZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zcl-dg-hbX"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="zcl-dg-hbX"/>
                     <connections>
                         <outlet property="imgCar" destination="NPg-Up-JKO" id="EIf-6Z-e9v"/>
                         <outlet property="labBrand" destination="tGb-qc-C4V" id="l3P-JP-jZ4"/>
