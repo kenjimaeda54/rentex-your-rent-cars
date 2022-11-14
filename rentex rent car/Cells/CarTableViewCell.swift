@@ -26,6 +26,7 @@ class CarTableViewCell: UITableViewCell {
 		// Configure the view for the selected state
 	}
 	
+	
 	func populetedCell(_ cars: CarsModel) {
 		imgCar.image = UIImage(named:cars.thumbNail)
 		imgTypeFuel.image = UIImage(named: cars.fuelType)

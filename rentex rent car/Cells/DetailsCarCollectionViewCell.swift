@@ -14,6 +14,7 @@ class DetailsCarCollectionViewCell: UICollectionViewCell {
 	
 	@IBOutlet weak var labFeatureIcon: UIImageView!
 	
+
 	
 	func populetedCell(_ accessories: Acessories) {
 		labTitle.text = accessories.name

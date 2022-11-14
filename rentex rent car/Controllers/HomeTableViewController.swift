@@ -9,51 +9,71 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 	
+	//MARK: - Vars
 	let cars: [CarsModel] = [
 		CarsModel(id:  "535e8de8-721b-4bac-8b72-7d29be7da467", brand: "Audi", name:  "RS 5 Coupé", about:  "O carro ainda tem sistema de tração nas quatro rodas Quattro com diferencial traseiro esportivo de série. De acordo com a Audi, ele faz o mesmo em 3,8 segundos na Sportback.", rent: Rent(period:  "Ao dia", price: 120), fuelType: "Gasolina", thumbNail:  "Corvete", accessories: [Acessories(type:  "speed", name:  "250km/h"),Acessories(type: "acceleration", name:  "3.8s")]),
 		CarsModel(id: "ffb71f55-818a-48b1-b7d2-2efc406ede25", brand:  "Porsche", name:"Panamera", about:   "O Panamera é um automóvel de luxo coupé com porte grande. Tem motorização dianteira V6 e V8. A tração é integral com uma caixa PDK de sete mudanças e dupla embreagem.", rent: Rent(period:  "Ao dia", price: 120), fuelType: "Gasolina", thumbNail:   "Porche", accessories: [Acessories(type:  "speed", name:  "250km/h"),Acessories(type: "acceleration", name:  "3.8s")]),
 	]
+	let backgroundNavigationBar = UIView()
 	
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		
+		//registrar .xib essencial
+		//nome identico da classe
 		tableView.register(UINib(nibName: "CarTableViewCell", bundle: nil),forCellReuseIdentifier: "cellCars")
-	    
-		 prepareViewNavigation()
-//		navigationController?.navigationBar.addSubview(prepareViewNavigation())
+		
 		
 	}
 	
-	func prepareViewNavigation()  {
-		let background = UIView()
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .lightContent
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		prepareViewNavigation()
+		
+		//para lightContentRefletir precisa o estilo ser .black
+		navigationController?.navigationBar.barStyle = .black
+		
+		if let navigation = navigationController?.navigationBar{
+			makeNavigationController(color: "black", navigation: navigation)
+		}
+	}
+	
+	//adicionar view ao navigation bar
+	func prepareViewNavigation() {
 		let imgLogotipo = makeImg("logotipo")
 		let labQuantityCars = makeLabel("Total de 12 carros")
-	
-		background.addSubview(imgLogotipo)
-		background.addSubview(labQuantityCars)
-		background.translatesAutoresizingMaskIntoConstraints = false
 		
-		navigationController?.navigationBar.addSubview(background)
+		backgroundNavigationBar.addSubview(imgLogotipo)
+		backgroundNavigationBar.addSubview(labQuantityCars)
+		backgroundNavigationBar.translatesAutoresizingMaskIntoConstraints = false
 		
-				if let navigationView = navigationController?.navigationBar {
+		navigationController?.navigationBar.addSubview(backgroundNavigationBar)
+		
+		if let navigationView = navigationController?.navigationBar {
 			NSLayoutConstraint.activate([
 				
 				
-				background.topAnchor.constraint(equalTo: navigationView.topAnchor, constant: 0),
-				background.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor,constant: 0),
-				background.trailingAnchor.constraint(equalTo: navigationView.trailingAnchor,constant: 0),
-				background.leadingAnchor.constraint(equalTo: navigationView.leadingAnchor, constant: 0),
+				backgroundNavigationBar.topAnchor.constraint(equalTo: navigationView.topAnchor, constant: 0),
+				backgroundNavigationBar.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor,constant: 0),
+				backgroundNavigationBar.trailingAnchor.constraint(equalTo: navigationView.trailingAnchor,constant: 0),
+				backgroundNavigationBar.leadingAnchor.constraint(equalTo: navigationView.leadingAnchor, constant: 0),
 				
 				
-				imgLogotipo.leadingAnchor.constraint(equalTo: background.leadingAnchor, constant: 18),
-				imgLogotipo.bottomAnchor.constraint(equalTo: background.bottomAnchor,constant: -32),
+				imgLogotipo.leadingAnchor.constraint(equalTo: backgroundNavigationBar.leadingAnchor, constant: 18),
+				imgLogotipo.bottomAnchor.constraint(equalTo: backgroundNavigationBar.bottomAnchor,constant: -32),
 				imgLogotipo.trailingAnchor.constraint(lessThanOrEqualTo: labQuantityCars.leadingAnchor, constant: 80),
-				imgLogotipo.topAnchor.constraint(equalTo: background.topAnchor,constant: 20),
+				imgLogotipo.topAnchor.constraint(equalTo: backgroundNavigationBar.topAnchor,constant: 20),
 				
-				labQuantityCars.trailingAnchor.constraint(equalTo: background.trailingAnchor, constant: -18),
-				labQuantityCars.bottomAnchor.constraint(equalTo: background.bottomAnchor,constant: -32),
-				labQuantityCars.topAnchor.constraint(equalTo: background.topAnchor,constant: 20),
+				labQuantityCars.trailingAnchor.constraint(equalTo: backgroundNavigationBar.trailingAnchor, constant: -18),
+				labQuantityCars.bottomAnchor.constraint(equalTo: backgroundNavigationBar.bottomAnchor,constant: -32),
+				labQuantityCars.topAnchor.constraint(equalTo: backgroundNavigationBar.topAnchor,constant: 20),
 				
 				
 			])
@@ -62,6 +82,13 @@ class HomeTableViewController: UITableViewController {
 		
 		
 	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		backgroundNavigationBar.removeFromSuperview()
+	}
+	
+	
 	
 	// MARK: - Table view data source
 	
@@ -73,8 +100,10 @@ class HomeTableViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cellCars", for: indexPath) as! CarTableViewCell
 		let car = cars[indexPath.row]
-		
 		cell.populetedCell(car)
+		
+		//dessativar selectoin style
+		cell.selectionStyle = .none
 		
 		return cell
 	}
@@ -84,8 +113,8 @@ class HomeTableViewController: UITableViewController {
 		performSegue(withIdentifier: "detailsSegue", sender: carsSelected)
 	}
 	
-   
-
+	
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "detailsSegue" {
 			let vc = segue.destination as! DetailsCarViewController

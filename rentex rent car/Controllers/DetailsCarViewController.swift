@@ -33,7 +33,7 @@ class DetailsCarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-			
+		
 			guard let car = car else {return}
 			
 			imgCar.image = UIImage(named: car.thumbNail)
@@ -44,6 +44,20 @@ class DetailsCarViewController: UIViewController {
 			labName.text = car.name
 			
 		}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		 super.viewWillAppear(animated)
+		
+		if let navigation = navigationController?.navigationBar {
+			makeNavigationController(color: "white", navigation: navigation)
+		}
+		
+	}
+	
+	override var preferredStatusBarStyle: UIStatusBarStyle {
+		return .darkContent
+	}
+	
     
 }
 

@@ -26,3 +26,13 @@ func makeLabel(_ stringLabel: String) -> UILabel {
 }
 
 
+func makeNavigationController(color: String,navigation: UINavigationBar) {
+	let apperance = UINavigationBarAppearance()
+	apperance.configureWithOpaqueBackground()
+	apperance.backgroundColor = UIColor(named: color)
+	apperance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+	navigation.scrollEdgeAppearance = apperance
+	navigation.standardAppearance = apperance
+	
+	
+}
