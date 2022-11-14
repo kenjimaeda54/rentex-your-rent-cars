@@ -63,7 +63,9 @@ class DetailsCarViewController: UIViewController {
 		return .darkContent
 	}
 	
-    
+	@IBAction func handleConfirmRent(_ sender: UIButton) {
+	}
+	
 }
 
 extension DetailsCarViewController: UICollectionViewDelegate,UICollectionViewDataSource {
