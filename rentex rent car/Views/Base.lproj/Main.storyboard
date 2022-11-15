@@ -240,7 +240,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcC-C4-5zi">
-                                        <rect key="frame" x="24" y="16" width="223" height="98"/>
+                                        <rect key="frame" x="24" y="16" width="223" height="105"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="105" id="K0q-s6-Lpn"/>
+                                        </constraints>
                                         <string key="text">Escolha uma
 data de início e
 fim do aluguel</string>
@@ -288,7 +291,6 @@ fim do aluguel</string>
                                     <constraint firstItem="ZcC-C4-5zi" firstAttribute="leading" secondItem="TxM-sx-FPk" secondAttribute="leading" constant="24" id="192-Aa-pnz"/>
                                     <constraint firstAttribute="trailing" secondItem="Fuj-eR-4T4" secondAttribute="trailing" constant="113" id="2jE-Fj-EYg"/>
                                     <constraint firstItem="aaA-Ap-Ts1" firstAttribute="top" secondItem="Fuj-eR-4T4" secondAttribute="bottom" constant="20" id="8jv-gr-bWi"/>
-                                    <constraint firstItem="Fuj-eR-4T4" firstAttribute="top" secondItem="ZcC-C4-5zi" secondAttribute="bottom" constant="24" id="BAN-S7-9ux"/>
                                     <constraint firstAttribute="height" constant="240" id="CcR-Rl-KCN"/>
                                     <constraint firstItem="3d9-6X-uT0" firstAttribute="centerX" secondItem="TxM-sx-FPk" secondAttribute="centerX" id="EoF-OA-wGm"/>
                                     <constraint firstItem="w4g-9u-Ekp" firstAttribute="centerY" secondItem="aaA-Ap-Ts1" secondAttribute="centerY" id="FtO-qv-7oP"/>

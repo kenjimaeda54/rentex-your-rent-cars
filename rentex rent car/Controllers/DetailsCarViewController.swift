@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CarsSelectedProtocol {
+	func carSelected(_ car: CarsModel)
+}
+
 class DetailsCarViewController: UIViewController {
 	
 	//MARK: - Outllet
@@ -28,13 +32,16 @@ class DetailsCarViewController: UIViewController {
 			Acessories(type: "Gasolina", name: "800 HP"),
 	    
 	]
-	
 	var car: CarsModel?
+	var protocolCar: CarsSelectedProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+			
 		
 			guard let car = car else {return}
+			
+			protocolCar?.carSelected(car)
 			
 			imgCar.image = UIImage(named: car.thumbNail)
 			labDay.text = car.rent.period
@@ -64,10 +71,21 @@ class DetailsCarViewController: UIViewController {
 	}
 	
 	@IBAction func handleConfirmRent(_ sender: UIButton) {
+		performSegue(withIdentifier: "dateSelectCell", sender: nil)
 	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "dateSelectCell" {
+			let vc = segue.destination as! RentDateSelectedViewController
+			vc.carId = car?.id
+		}
+	}
+
 	
 }
 
+
+//MARK: - UICollectionViewDelegate,UICollectionViewDataSource
 extension DetailsCarViewController: UICollectionViewDelegate,UICollectionViewDataSource {
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

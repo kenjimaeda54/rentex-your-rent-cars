@@ -10,6 +10,8 @@ import Foundation
 struct SchedulesByCars {
 	
 	let id: String
-	let unavailabeDates: [String]
+	let unavailableDates: [String]
 	
 }
+
+

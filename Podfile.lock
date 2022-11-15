@@ -1,16 +1,20 @@
 PODS:
+  - SwiftDate (5.1.0)
   - SwiftSVG (2.3.2)
 
 DEPENDENCIES:
+  - SwiftDate (~> 5.0)
   - SwiftSVG (~> 2.0)
 
 SPEC REPOS:
   trunk:
+    - SwiftDate
     - SwiftSVG
 
 SPEC CHECKSUMS:
+  SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
   SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
 
-PODFILE CHECKSUM: a1a4c01aed0f586713a9e265b739997db571b81d
+PODFILE CHECKSUM: d589a0a270d2bf39f02ddfaa0d1da4f7fa2cf847
 
 COCOAPODS: 1.11.3
