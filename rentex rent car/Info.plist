@@ -13,6 +13,7 @@
 		<string>Inter-Regular.ttf</string>
 		<string>Archivo-Bold.ttf</string>
 		<string>Inter-Bold.ttf</string>
+		<string>Archivo-SemiBold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

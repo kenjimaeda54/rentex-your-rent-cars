@@ -307,13 +307,14 @@ fim do aluguel</string>
                                     <constraint firstAttribute="trailing" secondItem="aaA-Ap-Ts1" secondAttribute="trailing" constant="24" id="uSI-oK-WdQ"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="vEW-1W-hec">
-                                <rect key="frame" x="24" y="264" width="366" height="340"/>
-                                <color key="tintColor" name="red"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oti-f2-KVX" customClass="FSCalendar">
+                                <rect key="frame" x="24" y="264" width="366" height="440"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
-                                    <action selector="handleSelectDatePicker:" destination="6Ke-L9-ZKf" eventType="valueChanged" id="QRt-tC-lct"/>
+                                    <outlet property="dataSource" destination="6Ke-L9-ZKf" id="7UG-fH-eLR"/>
+                                    <outlet property="delegate" destination="6Ke-L9-ZKf" id="O4l-zV-6b5"/>
                                 </connections>
-                            </datePicker>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyS-bX-tqt">
                                 <rect key="frame" x="31" y="714" width="352" height="56"/>
                                 <constraints>
@@ -335,23 +336,24 @@ fim do aluguel</string>
                             <constraint firstItem="TxM-sx-FPk" firstAttribute="leading" secondItem="GlD-xG-029" secondAttribute="leading" id="5aF-RB-nrm"/>
                             <constraint firstItem="GlD-xG-029" firstAttribute="trailing" secondItem="KyS-bX-tqt" secondAttribute="trailing" constant="31" id="E8V-xL-6lM"/>
                             <constraint firstItem="TxM-sx-FPk" firstAttribute="top" secondItem="GlD-xG-029" secondAttribute="top" id="Ivj-BD-LlQ"/>
-                            <constraint firstItem="vEW-1W-hec" firstAttribute="leading" secondItem="ZcC-C4-5zi" secondAttribute="leading" id="WUv-dw-Xes"/>
+                            <constraint firstItem="Oti-f2-KVX" firstAttribute="trailing" secondItem="aaA-Ap-Ts1" secondAttribute="trailing" id="K3Z-sl-Sbf"/>
+                            <constraint firstItem="Oti-f2-KVX" firstAttribute="top" secondItem="TxM-sx-FPk" secondAttribute="bottom" constant="24" id="N34-xN-VYt"/>
+                            <constraint firstItem="Oti-f2-KVX" firstAttribute="leading" secondItem="ZcC-C4-5zi" secondAttribute="leading" id="UZ3-nn-Vkz"/>
+                            <constraint firstItem="KyS-bX-tqt" firstAttribute="top" secondItem="Oti-f2-KVX" secondAttribute="bottom" constant="10" id="ejk-c9-yIA"/>
                             <constraint firstAttribute="trailing" secondItem="TxM-sx-FPk" secondAttribute="trailing" id="qcv-vB-Udh"/>
                             <constraint firstItem="KyS-bX-tqt" firstAttribute="bottom" secondItem="1DC-BW-lBy" secondAttribute="bottom" constant="-34" id="sPc-7y-CKP"/>
-                            <constraint firstItem="vEW-1W-hec" firstAttribute="top" secondItem="TxM-sx-FPk" secondAttribute="bottom" constant="24" id="y2N-o8-8bv"/>
-                            <constraint firstItem="vEW-1W-hec" firstAttribute="trailing" secondItem="aaA-Ap-Ts1" secondAttribute="trailing" id="yIp-c2-XHm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="j2Y-zR-S3v"/>
                     <connections>
-                        <outlet property="dateRentSelcet" destination="vEW-1W-hec" id="zPP-Ux-Fv7"/>
+                        <outlet property="fsCalendar" destination="Oti-f2-KVX" id="goi-HK-3xk"/>
                         <outlet property="viewFinalDate" destination="aaA-Ap-Ts1" id="Kuw-Mv-csX"/>
                         <outlet property="viewInitalDate" destination="w4g-9u-Ekp" id="fAS-vW-Fi3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ylj-UD-Db7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1225" y="79"/>
+            <point key="canvasLocation" x="1224.6376811594205" y="78.348214285714278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ngf-Dv-Pd9">

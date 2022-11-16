@@ -8,5 +8,6 @@ target 'rentex rent car' do
   # Pods for rentex rent car
   pod 'SwiftSVG', '~> 2.0'
   pod 'SwiftDate', '~> 5.0'
+  pod 'FSCalendar'
 
 end
