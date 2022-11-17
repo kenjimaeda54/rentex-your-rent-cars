@@ -17,9 +17,10 @@ class RentDateSelectedViewController: UIViewController {
 	
 	
 	//MARK: - IBOUTLET
+	@IBOutlet weak var btnConfirm: UIButton!
 	@IBOutlet weak var labReferenceFinalDate: UILabel!
 	@IBOutlet weak var labReferenceInitialDate: UILabel!
-	@IBOutlet weak var dateRentSelcet: UIDatePicker!
+	@IBOutlet weak var dateRentSelect: UIDatePicker!
 	@IBOutlet weak var viewFinalDate: UIView!
 	@IBOutlet weak var viewInitalDate: UIView!
 	@IBOutlet weak var fsCalendar: FSCalendar!
@@ -77,11 +78,6 @@ class RentDateSelectedViewController: UIViewController {
 	
 	
 	@IBAction func handleConfirmRent(_ sender: UIButton) {
-	
-		if dateSelected.count == 0 {
-		   
-			return 
-		}
 		
 		returnCollectionDateSelected { collectionDate in
 			var initialDate: String
@@ -225,14 +221,19 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 	}
 	
 	
-	//MARK: - DidSelect
+	//MARK: - DidSelect and Deselect
 	
 	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		let dateFormat = date.toFormat("yyyy/MM/dd")
+
 		
 		dateSelected.append(dateFormat)
 		makeLabelSelected(dateFormat)
-		
+   
+		if dateSelected.count > 0 {
+			btnConfirm.isEnabled = true
+		}
+
 	}
 	
 	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -249,6 +250,11 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 		//essencial remover a subview antes de atualizar ela
 		self.view.willRemoveSubview(labelFinalDate)
 		makeLabelDeSelected(dateFormat)
+		
+		//desativar button
+		if dateSelected.count == 0 {
+			btnConfirm.isEnabled = false
+		}
 		
 	}
 	

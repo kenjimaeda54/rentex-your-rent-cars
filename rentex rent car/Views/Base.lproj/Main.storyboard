@@ -315,7 +315,7 @@ fim do aluguel</string>
                                     <outlet property="delegate" destination="6Ke-L9-ZKf" id="O4l-zV-6b5"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyS-bX-tqt">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyS-bX-tqt">
                                 <rect key="frame" x="31" y="714" width="352" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Q3p-W7-ZRa"/>
@@ -346,6 +346,7 @@ fim do aluguel</string>
                     </view>
                     <navigationItem key="navigationItem" id="j2Y-zR-S3v"/>
                     <connections>
+                        <outlet property="btnConfirm" destination="KyS-bX-tqt" id="Lwy-gh-Fsg"/>
                         <outlet property="fsCalendar" destination="Oti-f2-KVX" id="goi-HK-3xk"/>
                         <outlet property="labReferenceFinalDate" destination="Fuj-eR-4T4" id="mP6-1m-abP"/>
                         <outlet property="labReferenceInitialDate" destination="BbD-6s-fb3" id="4Jf-HL-x0B"/>
