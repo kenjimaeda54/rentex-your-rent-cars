@@ -92,7 +92,7 @@ class RentDateSelectedViewController: UIViewController {
 				finalDate = collectionDate[0].date.toFormat("yyyy/MM/dd")
 			}
 			
-			let dateRangeSelectedRent: [String:String] = ["initialDate":initialDate,"finalDate": finalDate    ]
+			let dateRangeSelectedRent: [String:String] = ["initialDate":initialDate,"finalDate": finalDate ,"carId": self.carId!   ]
 			self.performSegue(withIdentifier: "reserveSegue", sender: dateRangeSelectedRent)
 			
 		}
@@ -103,7 +103,7 @@ class RentDateSelectedViewController: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "reserveSegue" {
 			let vc = segue.destination as! ReserveCarViewController
-			vc.dateRent = sender as? [String:String]
+			vc.detailsRent = sender as? [String:String]
 		}
 	}
 	

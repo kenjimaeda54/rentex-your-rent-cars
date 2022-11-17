@@ -600,6 +600,9 @@ fim do aluguel</string>
                                         <buttonConfiguration key="configuration" style="plain" title="Escolher período do aluguel">
                                             <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="handleConfirm:" destination="1Oj-BM-4s1" eventType="touchUpInside" id="b5I-eh-vLK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="gray100"/>
@@ -640,6 +643,15 @@ fim do aluguel</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="dxs-Fi-gfb"/>
+                    <connections>
+                        <outlet property="labBrand" destination="hxt-QK-00h" id="qDP-Ut-UEV"/>
+                        <outlet property="labDateFinal" destination="jdl-VE-4On" id="taL-hd-Hju"/>
+                        <outlet property="labDateInitial" destination="hiS-gf-LTO" id="dZK-XW-r24"/>
+                        <outlet property="labName" destination="2fl-gH-9L7" id="YiG-Gj-HrI"/>
+                        <outlet property="labPrice" destination="rk6-eN-cGr" id="Mw6-0z-ALA"/>
+                        <outlet property="labPriceDetailsTotal" destination="ef8-e5-ReY" id="QKJ-kc-IMo"/>
+                        <outlet property="labPriceTotal" destination="ibx-lL-wqD" id="ePK-gh-Wue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K02-hi-dBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

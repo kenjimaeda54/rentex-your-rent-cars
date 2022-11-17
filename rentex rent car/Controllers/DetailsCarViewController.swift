@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol CarsSelectedProtocol {
-	func carSelected(_ car: CarsModel)
-}
+
 
 class DetailsCarViewController: UIViewController {
 	
@@ -33,15 +31,13 @@ class DetailsCarViewController: UIViewController {
 	    
 	]
 	var car: CarsModel?
-	var protocolCar: CarsSelectedProtocol?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 			
 		
 			guard let car = car else {return}
-			
-			protocolCar?.carSelected(car)
 			
 			imgCar.image = UIImage(named: car.thumbNail)
 			labDay.text = car.rent.period
