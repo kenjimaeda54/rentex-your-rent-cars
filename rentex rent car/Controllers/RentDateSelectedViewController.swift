@@ -17,6 +17,8 @@ class RentDateSelectedViewController: UIViewController {
 	
 	
 	//MARK: - IBOUTLET
+	@IBOutlet weak var labReferenceFinalDate: UILabel!
+	@IBOutlet weak var labReferenceInitialDate: UILabel!
 	@IBOutlet weak var dateRentSelcet: UIDatePicker!
 	@IBOutlet weak var viewFinalDate: UIView!
 	@IBOutlet weak var viewInitalDate: UIView!
@@ -26,15 +28,17 @@ class RentDateSelectedViewController: UIViewController {
 	var carId: String?
 	let carUnavailableDates: [SchedulesByCars] = MockData().schedulesByCar
 	var orderDate: [DateInRegion]!
-	var dateSelected: [Date] = []
+	var dateSelected: [String] = []
+	let labelFinalDate = makeLabel("")
+	let labelInitialDate = makeLabel("")
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		
 	}
 	
-
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
@@ -55,7 +59,7 @@ class RentDateSelectedViewController: UIViewController {
 				makeNavigationController(color: "black", navigation: navigation)
 			}
 			
-		  //MARK: - FScalendar
+			//MARK: - FScalendar aparence
 			fsCalendar.allowsMultipleSelection = true
 			fsCalendar.appearance.titleFont = UIFont(name: "Inter-Regular", size: 15)
 			fsCalendar.appearance.headerTitleFont =  UIFont(name: "Archivo-SemiBold", size: 20)
@@ -77,19 +81,91 @@ class RentDateSelectedViewController: UIViewController {
 	
 	@IBAction func handleConfirmRent(_ sender: UIButton) {
 	}
- 
+	
+	
 	func dateAvailabel(_ date: Date) -> Bool {
-		
-		
 		let haveDate = orderDate.first {
 			let dateRegionFormater = "\($0.date.day)/\($0.date.month)"
 			let date = "\(date.day)/\(date.month)"
 			return dateRegionFormater == date
 		}
-			
+		
 		return haveDate != nil ? true : false
 		
 	}
+	
+	func returnGreatestNumber(completion: @escaping(String) -> Void  ) {
+		
+		let collectionDate = dateSelected.map {
+			$0.toDate()!
+		}
+		
+		let sorted = DateInRegion.sortedByNewest(list: collectionDate)
+		let formatSorted = sorted[0].toFormat("yyyy-MM-dd")
+		
+		completion(formatSorted)
+	
+		
+	}
+	
+	func makeLabelSelected(_ date: String) {
+		
+		viewInitalDate.isHidden = true
+		viewFinalDate.isHidden = true
+		labelInitialDate.isHidden = false
+		labelFinalDate.isHidden = false
+		labelInitialDate.text = dateSelected[0]
+		
+		
+		
+		returnGreatestNumber {
+			//sortear para pegar a data mais alta
+			//MARK: - fazer um foreach e comparar as datas dentro
+			self.labelFinalDate.text = $0
+		}
+		
+		
+		self.view.addSubview(labelInitialDate)
+		self.view.addSubview(labelFinalDate)
+		
+		NSLayoutConstraint.activate([
+			
+			labelInitialDate.leadingAnchor.constraint(equalTo: labReferenceInitialDate.leadingAnchor, constant: 0),
+			labelInitialDate.widthAnchor.constraint(equalToConstant: 100),
+			labelInitialDate.topAnchor.constraint(equalTo: labReferenceInitialDate.bottomAnchor, constant: 0),
+			labelInitialDate.heightAnchor.constraint(equalToConstant: 50),
+			
+			labelFinalDate.leadingAnchor.constraint(equalTo: labReferenceFinalDate.leadingAnchor, constant: 0),
+			labelFinalDate.widthAnchor.constraint(equalToConstant: 100),
+			labelFinalDate.topAnchor.constraint(equalTo: labReferenceFinalDate.bottomAnchor, constant: 0),
+			labelFinalDate.heightAnchor.constraint(equalToConstant: 50),
+			
+			
+		])
+		
+		
+	}
+	
+	func makeLabelDeSelected(_ date: String)  {
+		
+		if dateSelected.count == 0 {
+			labelInitialDate.isHidden = true
+			labelFinalDate.isHidden = true
+			viewFinalDate.isHidden = false
+			viewInitalDate.isHidden = false
+			return
+			
+		}
+		
+		returnGreatestNumber{
+			//sortear para pegar a data mais alta
+			//MARK: - fazer um foreach e comparar as datas dentro
+			self.labelFinalDate.text = $0
+		}
+		
+		
+	}
+	
 	
 	
 }
@@ -98,6 +174,7 @@ class RentDateSelectedViewController: UIViewController {
 //MARK: -FSCalendarDelegate,FSCalendarDataSource
 extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSource,FSCalendarDelegateAppearance {
 	
+	//MARK: - Min e Max
 	func minimumDate(for calendar: FSCalendar) -> Date {
 		return orderDate[orderDate.count - 1].date
 	}
@@ -105,20 +182,47 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 	func maximumDate(for calendar: FSCalendar) -> Date {
 		return orderDate[0].date
 	}
-
-	//dentro de cada mês existem dias que não estão disponíveis,
-  //na lógica abaixo  impedira de selecionar esses dias
-	func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
 	
-	  return dateAvailabel(date)
+	//dentro de cada mês existem dias que não estão disponíveis,
+	//na lógica abaixo  impedira de selecionar esses dias
+	//MARK: - Apagar dias não disponíveis para aluguel
+	func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+		return dateAvailabel(date)
 	}
 	
 	func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
 		
-	
+		
 		return dateAvailabel(date) ? nil : UIColor(named: "gray200")
 	}
 	
-
+	
+	//MARK: - DidSelect
+	
+	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+		let dateFormat = date.toFormat("yyyy-MM-dd")
+		
+		dateSelected.append(dateFormat)
+		makeLabelSelected(dateFormat)
+		
+	}
+	
+	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+		let dateFormat = date.toFormat("yyyy-MM-dd")
+		
+		let indexRemove = dateSelected.firstIndex(where: {
+			return $0 == dateFormat
+		})
+		
+		if let index  = indexRemove {
+			dateSelected.remove(at: index)
+		}
+		
+		//essencial remover a subview antes de atualizar ela
+		self.view.willRemoveSubview(labelFinalDate)
+		makeLabelDeSelected(dateFormat)
+		
+	}
+	
 	
 }

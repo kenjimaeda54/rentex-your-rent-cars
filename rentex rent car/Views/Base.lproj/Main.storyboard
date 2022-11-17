@@ -347,6 +347,8 @@ fim do aluguel</string>
                     <navigationItem key="navigationItem" id="j2Y-zR-S3v"/>
                     <connections>
                         <outlet property="fsCalendar" destination="Oti-f2-KVX" id="goi-HK-3xk"/>
+                        <outlet property="labReferenceFinalDate" destination="Fuj-eR-4T4" id="mP6-1m-abP"/>
+                        <outlet property="labReferenceInitialDate" destination="BbD-6s-fb3" id="4Jf-HL-x0B"/>
                         <outlet property="viewFinalDate" destination="aaA-Ap-Ts1" id="Kuw-Mv-csX"/>
                         <outlet property="viewInitalDate" destination="w4g-9u-Ekp" id="fAS-vW-Fi3"/>
                     </connections>
