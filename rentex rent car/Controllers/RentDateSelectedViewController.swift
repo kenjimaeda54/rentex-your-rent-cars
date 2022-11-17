@@ -75,11 +75,40 @@ class RentDateSelectedViewController: UIViewController {
 		
 	}
 	
-	@IBAction func handleSelectDatePicker(_ sender: UIDatePicker) {
-	}
-	
 	
 	@IBAction func handleConfirmRent(_ sender: UIButton) {
+	
+		if dateSelected.count == 0 {
+		   
+			return 
+		}
+		
+		returnCollectionDateSelected { collectionDate in
+			var initialDate: String
+			var finalDate: String
+			
+			if collectionDate.count > 0 {
+				initialDate = collectionDate[collectionDate.count  - 1].date.toFormat("yyyy/MM/dd")
+				finalDate = collectionDate[0].date.toFormat("yyyy/MM/dd")
+				
+			}else {
+				initialDate = collectionDate[0].date.toFormat("yyyy/MM/dd")
+				finalDate = collectionDate[0].date.toFormat("yyyy/MM/dd")
+			}
+			
+			let dateRangeSelectedRent: [String:String] = ["initialDate":initialDate,"finalDate": finalDate    ]
+			self.performSegue(withIdentifier: "reserveSegue", sender: dateRangeSelectedRent)
+			
+		}
+		
+		
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "reserveSegue" {
+			let vc = segue.destination as! ReserveCarViewController
+			vc.dateRent = sender as? [String:String]
+		}
 	}
 	
 	
@@ -94,17 +123,16 @@ class RentDateSelectedViewController: UIViewController {
 		
 	}
 	
-	func returnGreatestNumber(completion: @escaping(String) -> Void  ) {
+	func returnCollectionDateSelected(completion: @escaping([DateInRegion]) -> Void  ) {
 		
 		let collectionDate = dateSelected.map {
 			$0.toDate()!
 		}
 		
 		let sorted = DateInRegion.sortedByNewest(list: collectionDate)
-		let formatSorted = sorted[0].toFormat("yyyy-MM-dd")
 		
-		completion(formatSorted)
-	
+		completion(sorted)
+		
 		
 	}
 	
@@ -118,10 +146,11 @@ class RentDateSelectedViewController: UIViewController {
 		
 		
 		
-		returnGreatestNumber {
+		returnCollectionDateSelected {
 			//sortear para pegar a data mais alta
 			//MARK: - fazer um foreach e comparar as datas dentro
-			self.labelFinalDate.text = $0
+			let formatSorted = $0[0].toFormat("yyyy/MM/dd")
+			self.labelFinalDate.text = formatSorted
 		}
 		
 		
@@ -157,10 +186,11 @@ class RentDateSelectedViewController: UIViewController {
 			
 		}
 		
-		returnGreatestNumber{
+		returnCollectionDateSelected{
 			//sortear para pegar a data mais alta
 			//MARK: - fazer um foreach e comparar as datas dentro
-			self.labelFinalDate.text = $0
+			let formatSorted = $0[0].toFormat("yyyy/MM/dd")
+			self.labelFinalDate.text = formatSorted
 		}
 		
 		
@@ -191,8 +221,6 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 	}
 	
 	func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
-		
-		
 		return dateAvailabel(date) ? nil : UIColor(named: "gray200")
 	}
 	
@@ -200,7 +228,7 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 	//MARK: - DidSelect
 	
 	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-		let dateFormat = date.toFormat("yyyy-MM-dd")
+		let dateFormat = date.toFormat("yyyy/MM/dd")
 		
 		dateSelected.append(dateFormat)
 		makeLabelSelected(dateFormat)
@@ -208,7 +236,7 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 	}
 	
 	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
-		let dateFormat = date.toFormat("yyyy-MM-dd")
+		let dateFormat = date.toFormat("yyyy/MM/dd")
 		
 		let indexRemove = dateSelected.firstIndex(where: {
 			return $0 == dateFormat
