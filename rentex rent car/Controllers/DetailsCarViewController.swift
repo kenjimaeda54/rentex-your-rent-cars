@@ -61,8 +61,7 @@ class DetailsCarViewController: UIViewController {
 		//remover o titulo de back
 		//https://stackoverflow.com/questions/23853617/uinavigationbar-hide-back-button-text
 		self.navigationController?.navigationBar.topItem?.title = "";
-		
-		
+		navigationController?.navigationBar.tintColor = .black
 		if let navigation = navigationController?.navigationBar {
 			makeNavigationController(color: "white", navigation: navigation)
 		}
@@ -80,7 +79,7 @@ class DetailsCarViewController: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "dateSelectCell" {
 			let vc = segue.destination as! RentDateSelectedViewController
-			vc.carId = car?.id
+			vc.car = car
 		}
 	}
 	

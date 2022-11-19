@@ -7,16 +7,22 @@
 
 import Foundation
 
-protocol RequestDelegate {
+protocol CardDelegate {
 	func didUpdateRequestCars(_ data: [CarsModel])
-	func didFailWithError(_ error:Error)
+	func didFailWithErrorCar(_ error:Error)
+}
+
+protocol SchedulesDelegate {
+	func didUpdateRequestSchedules(_ data: SchedulesByCars)
+	func didFailWithErrorSchedules(_ error:Error)
 }
 
 struct RequestManager {
 	
-	var delegate: RequestDelegate?
+	var delegateCar: CardDelegate?
+	var delegateSchedules: SchedulesDelegate?
 	
-	func fetchData(_ noSafeUrl: String) {
+	func fetchData(noSafeUrl: String,typeRequest: String? = "") {
 		let urlSecure = noSafeUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
 		
 		if let url = URL(string: urlSecure) {
@@ -25,18 +31,33 @@ struct RequestManager {
 			let task = session.dataTask(with: url) { (data,response,error) in
 				
 				if error != nil {
-					delegate?.didFailWithError(error!)
 					print(error)
 				}
 				
-				if let safeData = data {
+				guard let safeData = data else {return}
 				
-					if let cars = jsonParse(safeData) as [CarsModel]? {
-						delegate?.didUpdateRequestCars(cars)
+				let json = JSONDecoder()
+				if typeRequest == "cars" {
+					do {
+						let request = try json.decode([CarsModel].self, from: safeData)
+						delegateCar?.didUpdateRequestCars(request)
 						
+					}catch {
+						delegateCar?.didFailWithErrorCar(error)
+					}
+					
+				}else {
+					
+					do {
+						let request = try json.decode(SchedulesByCars.self, from: safeData)
+						delegateSchedules?.didUpdateRequestSchedules(request)
+						
+					}catch {
+						delegateSchedules?.didFailWithErrorSchedules(error)
 					}
 					
 				}
+			
 				
 			}
 			task.resume()
@@ -45,17 +66,6 @@ struct RequestManager {
 		
 	}
 	
-	func jsonParse<T: Decodable>(_ data: Data) -> [T]? {
-		let json = JSONDecoder()
-		do {
-			let request = try json.decode([T].self, from: data)
-			return request
-			
-		}catch {
-			delegate?.didFailWithError(error)
-			return nil
-		}
-		
-	}
+	
 	
 }

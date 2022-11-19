@@ -18,16 +18,9 @@ class ReserveCarViewController: UIViewController {
 	@IBOutlet weak var labBrand: UILabel!
 	//MARK: - Vars
 	var detailsRent: [String:String]?
+	var car: CarsModel?
 	//MAR: - VARS
-	let accesories: [Acessories] =  [
-		Acessories(type: "Gasolina", name: "380km/h"),
-		Acessories(type: "Gasolina", name: "3.2s"),
-		Acessories(type: "Gasolina", name: "Gasolina"),
-		Acessories(type: "Gasolina", name: "Auto"),
-		Acessories(type: "Gasolina", name: "2 pessoas"),
-		Acessories(type: "Gasolina", name: "800 HP"),
-		
-	]
+	let accesories: [Acessories] =  []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -40,7 +33,7 @@ class ReserveCarViewController: UIViewController {
 		
 		//temos as datas inicias,finais e o id
 		//MARK: - Implementar restante da logica quando api estiver pronta
-	  print(detailsRent)
+	  print(detailsRent,car)
 		
 		if let navigation = navigationController?.navigationBar {
 			makeNavigationController(color: "white", navigation: navigation)
@@ -59,7 +52,7 @@ class ReserveCarViewController: UIViewController {
 
 
 //MARK: - UICollectionViewDelegate,UICollectionViewDataSource
-extension ReserveCarViewController: UICollectionViewDelegate,UICollectionViewDataSource {
+extension ReserveCarViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		
@@ -73,6 +66,13 @@ extension ReserveCarViewController: UICollectionViewDelegate,UICollectionViewDat
 		cell.populetedCell(accesories)
 		return cell
 		
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let yourWidth = collectionView.bounds.width/3.5
+			let yourHeight = yourWidth
+
+			return CGSize(width: yourWidth, height: yourHeight)
 	}
 	
 	

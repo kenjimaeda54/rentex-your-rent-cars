@@ -14,11 +14,11 @@ class HomeTableViewController: UITableViewController {
 	var cars: [CarsModel] = []
 	var managerModels = RequestManager()
 	let labQuantityCars = makeLabel("Total de 0")
-
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		managerModels.delegate = self
-		managerModels.fetchData("http://localhost:3000/cars")
+		managerModels.delegateCar = self
+		managerModels.fetchData(noSafeUrl:"http://localhost:3000/cars",  typeRequest: "cars")
 		
 		//registrar .xib essencial
 		//nome identico da classe
@@ -94,13 +94,13 @@ class HomeTableViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   	let cell = tableView.dequeueReusableCell(withIdentifier: "cellCars", for: indexPath) as! CarTableViewCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cellCars", for: indexPath) as! CarTableViewCell
 		let car = cars[indexPath.row]
 		cell.populetedCell(car)
 		labQuantityCars.text = "Total de \(cars.count) carros"
 		//dessativar selectoin style
 		cell.selectionStyle = .none
-
+		
 		
 		return cell
 	}
@@ -123,20 +123,20 @@ class HomeTableViewController: UITableViewController {
 }
 
 //MARk: - RequestDelegate
-extension HomeTableViewController: RequestDelegate {
+extension HomeTableViewController: CardDelegate {
 	func didUpdateRequestCars(_ data: [CarsModel]) {
-	   cars = data
+		cars = data
 		DispatchQueue.main.async {
 			self.tableView.reloadData()
 		}
-	
-	
+		
+		
 	}
 	
 	
-
-
-	func didFailWithError(_ error: Error) {
+	
+	
+	func didFailWithErrorCar(_ error: Error) {
 		print(error)
 	}
 	

@@ -26,9 +26,9 @@ class RentDateSelectedViewController: UIViewController {
 	@IBOutlet weak var fsCalendar: FSCalendar!
 	
 	//MARK: - Vars
-	var carId: Int?
-	let carUnavailableDates: [SchedulesByCars] = []
-	var orderDate: [DateInRegion]!
+	var car: CarsModel?
+	var managerRequest = RequestManager();
+	var orderDate: [DateInRegion] = []
 	var dateSelected: [String] = []
 	let labelFinalDate = makeLabel("")
 	let labelInitialDate = makeLabel("")
@@ -36,43 +36,59 @@ class RentDateSelectedViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		managerRequest.delegateSchedules = self
+		if let id = car?.id {
+			managerRequest.fetchData(noSafeUrl: "http://localhost:3000/schedules/\(id)")
+		}
 	}
 	
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		if let id = carId {
-			let filterCar = carUnavailableDates.first { $0.id == id}
-			guard let car = filterCar else {return}
-			
-			//https://cocoacasts.com/swift-fundamentals-how-to-convert-a-string-to-a-date-in-swift
-			
-			//https://cocoapods.org/pods/SwiftDate
-			let listDate: [DateInRegion] =  car.unavailableDates.map {
-				return $0.toDate("yyyy-MM-dd")!
-			}
-			
-			orderDate = DateInRegion.sortedByNewest(list: listDate)
-			
-			if let navigation = navigationController?.navigationBar{
-				makeNavigationController(color: "black", navigation: navigation)
-			}
-			
-			//MARK: - FScalendar aparence
-			fsCalendar.allowsMultipleSelection = true
-			fsCalendar.appearance.titleFont = UIFont(name: "Inter-Regular", size: 15)
-			fsCalendar.appearance.headerTitleFont =  UIFont(name: "Archivo-SemiBold", size: 20)
-			fsCalendar.appearance.headerTitleColor = UIColor(named: "black")
-			fsCalendar.appearance.caseOptions = [.headerUsesCapitalized,.weekdayUsesUpperCase]
-			fsCalendar.appearance.weekdayFont = UIFont(name: "Archivo-SemiBold", size: 10)
-			fsCalendar.appearance.weekdayTextColor = UIColor(named: "gray200")
-			fsCalendar.appearance.borderRadius = 0
-			fsCalendar.appearance.selectionColor = UIColor(named: "red50")
-			
-			
+		if let id = car?.id {
+			managerRequest.fetchData(noSafeUrl: "http://localhost:3000/schedules/\(id)")
 		}
+		
+		//mudar a cor do butao de voltar
+		//https://stackoverflow.com/questions/28733936/change-color-of-back-button-in-navigation-bar
+		if let navigation = navigationController?.navigationBar{
+			makeNavigationController(color: "black", navigation: navigation)
+		}
+		let backButton = UIBarButtonItem()
+		backButton.title = ""
+		navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+		navigationController?.navigationBar.tintColor = .white
+		
+		
+	}
+	
+	func prepareFsCalendar(_ dates: [String]) {
+		//https://cocoacasts.com/swift-fundamentals-how-to-convert-a-string-to-a-date-in-swift
+		
+		//https://cocoapods.org/pods/SwiftDate
+		let listDate: [DateInRegion] =  dates.map {
+			return $0.toDate("yyyy-MM-dd")!
+		}
+		
+		orderDate = DateInRegion.sortedByNewest(list: listDate)
+		
+		fsCalendar.delegate = self
+		fsCalendar.dataSource  = self
+	
+		
+		//MARK: - FScalendar aparence
+		fsCalendar.allowsMultipleSelection = true
+		fsCalendar.appearance.titleFont = UIFont(name: "Inter-Regular", size: 15)
+		fsCalendar.appearance.headerTitleFont =  UIFont(name: "Archivo-SemiBold", size: 20)
+		fsCalendar.appearance.headerTitleColor = UIColor(named: "black")
+		fsCalendar.appearance.caseOptions = [.headerUsesCapitalized,.weekdayUsesUpperCase]
+		fsCalendar.appearance.weekdayFont = UIFont(name: "Archivo-SemiBold", size: 10)
+		fsCalendar.appearance.weekdayTextColor = UIColor(named: "gray200")
+		fsCalendar.appearance.borderRadius = 0
+		fsCalendar.appearance.selectionColor = UIColor(named: "red50")
+		
+		fsCalendar.reloadData()
 		
 	}
 	
@@ -92,18 +108,19 @@ class RentDateSelectedViewController: UIViewController {
 				finalDate = collectionDate[0].date.toFormat("yyyy/MM/dd")
 			}
 			
-			let dateRangeSelectedRent: [String:String] = ["initialDate":initialDate,"finalDate": finalDate ,"carId": "\(self.carId!)"   ]
+			let dateRangeSelectedRent: [String:String] = ["initialDate":initialDate,"finalDate": finalDate]
 			self.performSegue(withIdentifier: "reserveSegue", sender: dateRangeSelectedRent)
 			
 		}
-		
-		
 	}
+	
+	
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "reserveSegue" {
 			let vc = segue.destination as! ReserveCarViewController
 			vc.detailsRent = sender as? [String:String]
+			vc.car = car
 		}
 	}
 	
@@ -165,7 +182,6 @@ class RentDateSelectedViewController: UIViewController {
 			labelFinalDate.topAnchor.constraint(equalTo: labReferenceFinalDate.bottomAnchor, constant: 0),
 			labelFinalDate.heightAnchor.constraint(equalToConstant: 50),
 			
-			
 		])
 		
 		
@@ -202,6 +218,7 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 	
 	//MARK: - Min e Max
 	func minimumDate(for calendar: FSCalendar) -> Date {
+		
 		return orderDate[orderDate.count - 1].date
 	}
 	
@@ -225,15 +242,15 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 	
 	func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
 		let dateFormat = date.toFormat("yyyy/MM/dd")
-
+		
 		
 		dateSelected.append(dateFormat)
 		makeLabelSelected(dateFormat)
-   
+		
 		if dateSelected.count > 0 {
 			btnConfirm.isEnabled = true
 		}
-
+		
 	}
 	
 	func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -256,6 +273,24 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 			btnConfirm.isEnabled = false
 		}
 		
+	}
+	
+	
+}
+
+extension RentDateSelectedViewController: SchedulesDelegate {
+	func didUpdateRequestSchedules(_ data: SchedulesByCars) {
+		
+		
+		DispatchQueue.main.async {
+			self.prepareFsCalendar(data.unavailableDates)
+		}
+		
+		
+	}
+	
+	func didFailWithErrorSchedules(_ error: Error) {
+		print(error)
 	}
 	
 	
