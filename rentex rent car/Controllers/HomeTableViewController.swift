@@ -11,8 +11,9 @@ class HomeTableViewController: UITableViewController {
 	
 	//MARK: - Vars
 	let backgroundNavigationBar = UIView()
-	let cars: [CarsModel] = []
+	var cars: [CarsModel] = []
 	var managerModels = RequestManager()
+	let labQuantityCars = makeLabel("Total de 0")
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -46,8 +47,6 @@ class HomeTableViewController: UITableViewController {
 	//adicionar view ao navigation bar
 	func prepareViewNavigation() {
 		let imgLogotipo = makeImg("logotipo")
-		let labQuantityCars = makeLabel("Total de 12 carros")
-		
 		backgroundNavigationBar.addSubview(imgLogotipo)
 		backgroundNavigationBar.addSubview(labQuantityCars)
 		backgroundNavigationBar.translatesAutoresizingMaskIntoConstraints = false
@@ -90,18 +89,18 @@ class HomeTableViewController: UITableViewController {
 	
 	// MARK: - Table view data source
 	
-	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return cars.count
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cellCars", for: indexPath) as! CarTableViewCell
+   	let cell = tableView.dequeueReusableCell(withIdentifier: "cellCars", for: indexPath) as! CarTableViewCell
 		let car = cars[indexPath.row]
 		cell.populetedCell(car)
-		
+		labQuantityCars.text = "Total de \(cars.count) carros"
 		//dessativar selectoin style
 		cell.selectionStyle = .none
+
 		
 		return cell
 	}
@@ -125,12 +124,18 @@ class HomeTableViewController: UITableViewController {
 
 //MARk: - RequestDelegate
 extension HomeTableViewController: RequestDelegate {
-	func didUpdateRequest(_ data: [CarsModel]) {
-	   print(data)
+	func didUpdateRequestCars(_ data: [CarsModel]) {
+	   cars = data
+		DispatchQueue.main.async {
+			self.tableView.reloadData()
+		}
+	
+	
 	}
 	
-
 	
+
+
 	func didFailWithError(_ error: Error) {
 		print(error)
 	}

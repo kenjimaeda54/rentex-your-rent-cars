@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RequestDelegate {
-	func didUpdateRequest(_ data: [CarsModel])
+	func didUpdateRequestCars(_ data: [CarsModel])
 	func didFailWithError(_ error:Error)
 }
 
@@ -17,47 +17,45 @@ struct RequestManager {
 	var delegate: RequestDelegate?
 	
 	func fetchData(_ noSafeUrl: String) {
-		let safeUrl = noSafeUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+		let urlSecure = noSafeUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
 		
-		if let url = URL(string: safeUrl) {
+		if let url = URL(string: urlSecure) {
 			let session = URLSession(configuration: .default)
-			let task = session.dataTask(with: url) {[self](data, response, error) in
-				 
+			
+			let task = session.dataTask(with: url) { (data,response,error) in
+				
 				if error != nil {
 					delegate?.didFailWithError(error!)
-					return print(error)
+					print(error)
 				}
 				
 				if let safeData = data {
-					
-				   
-					if let request = jsonParse(safeData) {
-						delegate?.didUpdateRequest(request)
+				
+					if let cars = jsonParse(safeData) as [CarsModel]? {
+						delegate?.didUpdateRequestCars(cars)
 						
 					}
 					
 				}
-			
-				
 				
 			}
 			task.resume()
+			
 		}
 		
 	}
 	
-	func jsonParse(_ data: Data) -> [CarsModel]? {
-		let decoder = JSONDecoder()
+	func jsonParse<T: Decodable>(_ data: Data) -> [T]? {
+		let json = JSONDecoder()
 		do {
-			//array ao invez de objeot e so usar []
-			let response = try decoder.decode([CarsModel].self, from: data)
-			return response
+			let request = try json.decode([T].self, from: data)
+			return request
+			
 		}catch {
 			delegate?.didFailWithError(error)
-		  return nil
+			return nil
 		}
 		
 	}
-	
 	
 }

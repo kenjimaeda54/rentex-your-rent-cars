@@ -15,25 +15,38 @@ class CarTableViewCell: UITableViewCell {
 	@IBOutlet weak var labDayValue: UILabel!
 	@IBOutlet weak var labDay: UILabel!
 	@IBOutlet weak var labBrand: UILabel!
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		// Initialization code
-	}
-	
-	override func setSelected(_ selected: Bool, animated: Bool) {
-		super.setSelected(selected, animated: animated)
 		
-		// Configure the view for the selected state
+		
 	}
 	
-	
+
 	func populetedCell(_ cars: CarsModel) {
-		imgCar.image = UIImage(named:cars.thumbNail)
-		imgTypeFuel.image = UIImage(named: cars.fuelType)
-		labModel.text = cars.name
-		labBrand.text = cars.brand
-		labDayValue.text = "R$\(cars.rent.price)"
-		labDay.text = cars.rent.period
+		
+		let imgData  = URL(string: cars.thumbNail)!
+		
+		
+		
+		DispatchQueue.global().async {
+			if let data = try? Data(contentsOf: imgData) {
+				
+				DispatchQueue.main.async {
+					self.imgCar.image = UIImage(data: data)
+					self.imgTypeFuel.image = UIImage(named: cars.fuelType)
+					self.labModel.text = cars.name.capitalized
+					self.labBrand.text = cars.brand.capitalized
+					self.labDayValue.text = "R$\(cars.rent.price)"
+					self.labDay.text = cars.rent.period
+					
+					
+				}
+				
+			}
+			
+			
+		}
+		
 	}
-	
 }

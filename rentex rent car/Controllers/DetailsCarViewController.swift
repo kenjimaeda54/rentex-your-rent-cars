@@ -21,40 +21,47 @@ class DetailsCarViewController: UIViewController {
 	@IBOutlet weak var imgCar: UIImageView!
 	
 	//MAR: - VARS
-	let accesories: [Acessories] =  [
-	    Acessories(type: "Gasolina", name: "380km/h"),
-			Acessories(type: "Gasolina", name: "3.2s"),
-			Acessories(type: "Gasolina", name: "Gasolina"),
-			Acessories(type: "Gasolina", name: "Auto"),
-		  Acessories(type: "Gasolina", name: "2 pessoas"),
-			Acessories(type: "Gasolina", name: "800 HP"),
-	    
-	]
+	var accesories: [Acessories] =  []
 	var car: CarsModel?
-
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  let sectionInsets = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
 			
 		
-			guard let car = car else {return}
-			
-			imgCar.image = UIImage(named: car.thumbNail)
-			labDay.text = car.rent.period
-			labBrand.text = car.brand
-			labDescription.text  = car.about
-			labPrice.text = "R$\(car.rent.price)"
-			labName.text = car.name
+		guard let car = car else {return}
+		
+		accesories = car.accessories
+		
+		let url = URL(string: car.thumbNail)!
+		
+		DispatchQueue.global().async {
+			if let data = try? Data(contentsOf: url) {
+				
+				DispatchQueue.main.async {
+					self.imgCar.image = UIImage(data: data)
+					self.labDay.text = car.rent.period
+					self.labBrand.text = car.brand
+					self.labDescription.text  = car.about
+					self.labPrice.text = "R$\(car.rent.price)"
+					self.labName.text = car.name
+					
+					
+				}
+				
+			}
 			
 		}
+		
+	}
 	
 	override func viewWillAppear(_ animated: Bool) {
-		 super.viewWillAppear(animated)
- 
+		super.viewWillAppear(animated)
+		
 		//remover o titulo de back
 		//https://stackoverflow.com/questions/23853617/uinavigationbar-hide-back-button-text
 		self.navigationController?.navigationBar.topItem?.title = "";
-
+		
 		
 		if let navigation = navigationController?.navigationBar {
 			makeNavigationController(color: "white", navigation: navigation)
@@ -69,37 +76,48 @@ class DetailsCarViewController: UIViewController {
 	@IBAction func handleConfirmRent(_ sender: UIButton) {
 		performSegue(withIdentifier: "dateSelectCell", sender: nil)
 	}
-
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "dateSelectCell" {
 			let vc = segue.destination as! RentDateSelectedViewController
 			vc.carId = car?.id
 		}
 	}
-
+	
 	
 }
 
 
 //MARK: - UICollectionViewDelegate,UICollectionViewDataSource
-extension DetailsCarViewController: UICollectionViewDelegate,UICollectionViewDataSource {
-
+extension DetailsCarViewController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
+
 		return accesories.count
 	}
 	
+
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailsCell", for: indexPath) as! DetailsCarCollectionViewCell
-		
 		let accesories = accesories[indexPath.row]
 		cell.populetedCell(accesories)
 		return cell
-		
+
+	}
+   
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let yourWidth = collectionView.bounds.width/3.5
+			let yourHeight = yourWidth
+
+			return CGSize(width: yourWidth, height: yourHeight)
 	}
 	
+
+
+ 
+ 
 	
 }
 
 
-	
+
