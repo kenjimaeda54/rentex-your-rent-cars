@@ -32,6 +32,7 @@ class RentDateSelectedViewController: UIViewController {
 	var dateSelected: [String] = []
 	let labelFinalDate = makeLabel("")
 	let labelInitialDate = makeLabel("")
+
 	
 	
 	override func viewDidLoad() {
@@ -107,9 +108,9 @@ class RentDateSelectedViewController: UIViewController {
 				initialDate = collectionDate[0].date.toFormat("yyyy/MM/dd")
 				finalDate = collectionDate[0].date.toFormat("yyyy/MM/dd")
 			}
-			
-			let dateRangeSelectedRent: [String:String] = ["initialDate":initialDate,"finalDate": finalDate]
-			self.performSegue(withIdentifier: "reserveSegue", sender: dateRangeSelectedRent)
+			 
+			let dateInitialAndFinal = ["initialDate": initialDate,"finalDate":finalDate]
+			self.performSegue(withIdentifier: "reserveSegue", sender: dateInitialAndFinal)
 			
 		}
 	}
@@ -119,7 +120,8 @@ class RentDateSelectedViewController: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "reserveSegue" {
 			let vc = segue.destination as! ReserveCarViewController
-			vc.detailsRent = sender as? [String:String]
+			vc.totalDateRent = dateSelected
+			vc.initialAndFinalDate = sender as? [String:String]
 			vc.car = car
 		}
 	}
@@ -156,16 +158,13 @@ class RentDateSelectedViewController: UIViewController {
 		labelInitialDate.isHidden = false
 		labelFinalDate.isHidden = false
 		labelInitialDate.text = dateSelected[0]
-		
-		
-		
+	
 		returnCollectionDateSelected {
 			//sortear para pegar a data mais alta
 			//MARK: - fazer um foreach e comparar as datas dentro
 			let formatSorted = $0[0].toFormat("yyyy/MM/dd")
 			self.labelFinalDate.text = formatSorted
 		}
-		
 		
 		self.view.addSubview(labelInitialDate)
 		self.view.addSubview(labelFinalDate)

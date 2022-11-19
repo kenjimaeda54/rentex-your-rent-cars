@@ -17,13 +17,29 @@ class ReserveCarViewController: UIViewController {
 	@IBOutlet weak var labPrice: UILabel!
 	@IBOutlet weak var labBrand: UILabel!
 	//MARK: - Vars
-	var detailsRent: [String:String]?
+	//seria ideal verificar se esta no intervalo de datas
+	//momento estou adicionado apenas as selecionadas e nao um intervalo
+	var totalDateRent: [String]?
+	var initialAndFinalDate: [String:String]?
 	var car: CarsModel?
 	//MAR: - VARS
-	let accesories: [Acessories] =  []
+	var accesories: [Acessories] =  []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		if let car = car,let detailsRent = totalDateRent,let initialAndFinalDate = initialAndFinalDate {
+			accesories = car.accessories
+			let priceTotal = car.rent.price * Double(detailsRent.count)
+			let priceCurrency = NumberFormatter.localizedString(from: priceTotal as NSNumber, number: .currency)
+			labPriceTotal.text = "\(priceCurrency)"
+			labPriceDetailsTotal.text = "\(car.rent.price) x \(detailsRent.count)"
+			labName.text = car.name
+			labBrand.text = car.brand
+			labDateInitial.text = initialAndFinalDate["initialDate"]
+			labDateFinal.text = initialAndFinalDate["finalDate"]
+			labPrice.text = "R$\(car.rent.price)"
+			
+		}
 		
 		
 	}
@@ -33,7 +49,7 @@ class ReserveCarViewController: UIViewController {
 		
 		//temos as datas inicias,finais e o id
 		//MARK: - Implementar restante da logica quando api estiver pronta
-	  print(detailsRent,car)
+	  print(totalDateRent,car)
 		
 		if let navigation = navigationController?.navigationBar {
 			makeNavigationController(color: "white", navigation: navigation)
