@@ -27,6 +27,7 @@ class ReserveCarViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		if let car = car,let detailsRent = totalDateRent,let initialAndFinalDate = initialAndFinalDate {
 			accesories = car.accessories
 			let priceTotal = car.rent.price * Double(detailsRent.count)
@@ -47,14 +48,11 @@ class ReserveCarViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(true)
 		
-		//temos as datas inicias,finais e o id
-		//MARK: - Implementar restante da logica quando api estiver pronta
-	  print(totalDateRent,car)
-		
 		if let navigation = navigationController?.navigationBar {
 			makeNavigationController(color: "white", navigation: navigation)
 		}
-		
+		navigationController?.navigationBar.tintColor = .black
+		self.navigationController?.navigationBar.topItem?.title = "";
 	
 	}
 	
@@ -63,7 +61,11 @@ class ReserveCarViewController: UIViewController {
 	}
 	
 	@IBAction func handleConfirm(_ sender: UIButton) {
+		performSegue(withIdentifier: "scheduleCompleteSegue", sender: nil)
+		
 	}
+	
+	
 }
 
 

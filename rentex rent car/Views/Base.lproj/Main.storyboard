@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y00-1c-hHd">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -33,7 +33,7 @@
             <objects>
                 <tableViewController id="vdd-je-Rce" customClass="HomeTableViewController" customModule="rentex_rent_car" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0AQ-N7-aBd">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="701"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="752"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="gray100"/>
                         <connections>
@@ -55,33 +55,33 @@
             <objects>
                 <viewController id="I5o-Is-zx0" customClass="DetailsCarViewController" customModule="rentex_rent_car" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Spb-fA-fsZ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Corvete" translatesAutoresizingMaskIntoConstraints="NO" id="NPg-Up-JKO">
-                                <rect key="frame" x="16" y="15.999999999999986" width="358" height="245.66666666666663"/>
+                                <rect key="frame" x="16" y="16" width="382" height="296.5"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CHEVROLET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGb-qc-C4V">
-                                <rect key="frame" x="16.000000000000004" y="297.66666666666669" width="61.333333333333343" height="16"/>
+                                <rect key="frame" x="16" y="348.5" width="61.5" height="16"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="10"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AO DIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oR-jy-5Kg">
-                                <rect key="frame" x="340" y="297.66666666666669" width="34" height="11"/>
+                                <rect key="frame" x="364" y="348.5" width="34" height="11"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="10"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 580" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOl-26-vfn">
-                                <rect key="frame" x="294" y="318.66666666666669" width="80" height="27.333333333333314"/>
+                                <rect key="frame" x="318" y="369.5" width="80" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="25"/>
                                 <color key="textColor" name="red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2oz-0g-ruK">
-                                <rect key="frame" x="16" y="346" width="358" height="195"/>
+                                <rect key="frame" x="16" y="397" width="382" height="195"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="DOr-ya-bY5"/>
                                 </constraints>
@@ -103,7 +103,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="119" height="87"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gasolina" translatesAutoresizingMaskIntoConstraints="NO" id="PMh-Xd-WMq">
-                                                            <rect key="frame" x="43.666666666666664" y="5" width="31.999999999999993" height="32"/>
+                                                            <rect key="frame" x="43.5" y="5" width="32" height="32"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="32" id="2s3-bh-cns"/>
                                                                 <constraint firstAttribute="height" constant="32" id="Nmp-ka-OYK"/>
@@ -147,17 +147,17 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-4g-yuj">
-                                <rect key="frame" x="16" y="556" width="358" height="83"/>
+                                <rect key="frame" x="16" y="607" width="382" height="83"/>
                                 <string key="text">Este é automóvel desportivo. Surgiu do lendário touro de lide indultado na praça Real Maestranza de Sevilla. É um belíssimo carro para quem gosta de acelerar.</string>
                                 <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="15"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HX1-8A-bP7">
-                                <rect key="frame" x="0.0" y="649" width="390" height="104"/>
+                                <rect key="frame" x="0.0" y="700" width="414" height="104"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="InT-iX-EbS">
-                                        <rect key="frame" x="24" y="24" width="342" height="56"/>
+                                        <rect key="frame" x="24" y="24" width="366" height="56"/>
                                         <color key="backgroundColor" name="red"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="13o-GM-dPF"/>
@@ -180,7 +180,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corvette Z06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZt-ke-kqH">
-                                <rect key="frame" x="16" y="318.66666666666669" width="147" height="27.333333333333314"/>
+                                <rect key="frame" x="16" y="369.5" width="147" height="27.5"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="25"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
@@ -236,11 +236,11 @@
             <objects>
                 <viewController id="6Ke-L9-ZKf" customClass="RentDateSelectedViewController" customModule="rentex_rent_car" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1DC-BW-lBy">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxM-sx-FPk">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="240"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcC-C4-5zi">
                                         <rect key="frame" x="24" y="16" width="223" height="105"/>
@@ -255,7 +255,7 @@ fim do aluguel</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3d9-6X-uT0">
-                                        <rect key="frame" x="24" y="146.33333333333334" width="342" height="14.999999999999972"/>
+                                        <rect key="frame" x="24" y="146" width="366" height="15"/>
                                         <color key="tintColor" name="gray300"/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="0.75" height="1"/>
                                     </imageView>
@@ -269,14 +269,14 @@ fim do aluguel</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aaA-Ap-Ts1">
-                                        <rect key="frame" x="257" y="169" width="109" height="1"/>
+                                        <rect key="frame" x="257" y="169" width="133" height="1"/>
                                         <color key="backgroundColor" name="gray300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="eom-zp-98h"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fuj-eR-4T4">
-                                        <rect key="frame" x="257" y="138" width="20" height="11"/>
+                                        <rect key="frame" x="257" y="138" width="44" height="11"/>
                                         <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="10"/>
                                         <color key="textColor" name="gray300"/>
                                         <nil key="highlightedColor"/>
@@ -311,11 +311,11 @@ fim do aluguel</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oti-f2-KVX" customClass="FSCalendar">
-                                <rect key="frame" x="24" y="264" width="342" height="389"/>
+                                <rect key="frame" x="24" y="264" width="366" height="440"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyS-bX-tqt">
-                                <rect key="frame" x="31" y="663" width="328" height="56"/>
+                                <rect key="frame" x="31" y="714" width="352" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="Q3p-W7-ZRa"/>
                                 </constraints>
@@ -366,7 +366,7 @@ fim do aluguel</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y00-1c-hHd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="wHw-lx-cEk">
-                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="black"/>
                         <color key="barTintColor" name="black"/>
@@ -385,17 +385,17 @@ fim do aluguel</string>
             <objects>
                 <viewController id="1Oj-BM-4s1" customClass="ReserveCarViewController" customModule="rentex_rent_car" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zXS-QM-X01">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="753"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Corvete" translatesAutoresizingMaskIntoConstraints="NO" id="pTD-eL-Vfc">
-                                <rect key="frame" x="16" y="16" width="358" height="190"/>
+                                <rect key="frame" x="16" y="16" width="382" height="190"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="190" id="pcB-KE-cs5"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CHEVROLET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxt-QK-00h">
-                                <rect key="frame" x="16.000000000000004" y="227.33333333333331" width="61.333333333333343" height="12"/>
+                                <rect key="frame" x="16" y="227.5" width="61.5" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="0cb-Nb-qYR"/>
                                 </constraints>
@@ -404,19 +404,19 @@ fim do aluguel</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AO DIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-2f-w65">
-                                <rect key="frame" x="340" y="226.33333333333331" width="34" height="11"/>
+                                <rect key="frame" x="364" y="226.5" width="34" height="11"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="10"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 580" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk6-eN-cGr">
-                                <rect key="frame" x="294" y="253.33333333333334" width="80" height="27.333333333333343"/>
+                                <rect key="frame" x="318" y="253.5" width="80" height="27"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="25"/>
                                 <color key="textColor" name="red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corvette Z06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fl-gH-9L7">
-                                <rect key="frame" x="16" y="253.33333333333331" width="147" height="29"/>
+                                <rect key="frame" x="16" y="253.5" width="147" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="AC0-00-g1H"/>
                                 </constraints>
@@ -425,7 +425,7 @@ fim do aluguel</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="766-gP-kGj">
-                                <rect key="frame" x="16" y="290" width="358" height="195"/>
+                                <rect key="frame" x="16" y="290" width="382" height="195"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="195" id="eXW-mk-67f"/>
@@ -448,7 +448,7 @@ fim do aluguel</string>
                                                     <rect key="frame" x="0.0" y="10" width="119" height="72"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 pessoas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BW-Dy-ZY3">
-                                                            <rect key="frame" x="10.666666666666664" y="35" width="97.666666666666686" height="21"/>
+                                                            <rect key="frame" x="10.5" y="35" width="98" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="ob0-cT-diJ"/>
                                                             </constraints>
@@ -492,7 +492,7 @@ fim do aluguel</string>
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-6D-bHm">
-                                <rect key="frame" x="16" y="490" width="358" height="154"/>
+                                <rect key="frame" x="16" y="490" width="382" height="205"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="253" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="fWL-zX-fmd">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -510,25 +510,25 @@ fim do aluguel</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATÉ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-RF-ENf">
-                                        <rect key="frame" x="217" y="8" width="19.333333333333343" height="11"/>
+                                        <rect key="frame" x="217" y="8" width="19.5" height="11"/>
                                         <fontDescription key="fontDescription" name="Archivo-SemiBold" family="Archivo" pointSize="10"/>
                                         <color key="textColor" name="gray200"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="18/06/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiS-gf-LTO">
-                                        <rect key="frame" x="63" y="27.333333333333371" width="82" height="17.666666666666671"/>
+                                        <rect key="frame" x="63" y="26.5" width="82" height="18.5"/>
                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
                                         <color key="textColor" name="gray500"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20/06/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdl-VE-4On">
-                                        <rect key="frame" x="217" y="27.333333333333371" width="141" height="17.666666666666671"/>
+                                        <rect key="frame" x="217" y="26.5" width="165" height="18.5"/>
                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
                                         <color key="textColor" name="gray500"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFO-gb-8JM">
-                                        <rect key="frame" x="0.0" y="68" width="358" height="1"/>
+                                        <rect key="frame" x="0.0" y="68" width="382" height="1"/>
                                         <color key="backgroundColor" name="gray200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="QNl-LA-4tI"/>
@@ -541,13 +541,13 @@ fim do aluguel</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 580 x3 diárias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef8-e5-ReY">
-                                        <rect key="frame" x="0.0" y="105" width="127.33333333333333" height="17.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="105" width="127.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
                                         <color key="textColor" name="gray500"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 2.900" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibx-lL-wqD">
-                                        <rect key="frame" x="217" y="96.333333333333371" width="141" height="26.333333333333329"/>
+                                        <rect key="frame" x="217" y="96.5" width="165" height="26"/>
                                         <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="24"/>
                                         <color key="textColor" name="green"/>
                                         <nil key="highlightedColor"/>
@@ -586,10 +586,10 @@ fim do aluguel</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Woa-tJ-KMB">
-                                <rect key="frame" x="0.0" y="649" width="390" height="104"/>
+                                <rect key="frame" x="0.0" y="700" width="414" height="104"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wo-TB-uGA">
-                                        <rect key="frame" x="24" y="24" width="342" height="56"/>
+                                        <rect key="frame" x="24" y="24" width="366" height="56"/>
                                         <color key="backgroundColor" name="red"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="3qY-so-CQO"/>
@@ -649,11 +649,109 @@ fim do aluguel</string>
                         <outlet property="labPrice" destination="rk6-eN-cGr" id="Mw6-0z-ALA"/>
                         <outlet property="labPriceDetailsTotal" destination="ef8-e5-ReY" id="QKJ-kc-IMo"/>
                         <outlet property="labPriceTotal" destination="ibx-lL-wqD" id="ePK-gh-Wue"/>
+                        <segue destination="sMv-a2-jqB" kind="show" identifier="scheduleCompleteSegue" id="pf6-Lw-DF1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K02-hi-dBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2005.7971014492755" y="77.678571428571431"/>
+        </scene>
+        <!--Schedule Complete View Controller-->
+        <scene sceneID="mha-I9-AIb">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="sMv-a2-jqB" customClass="ScheduleCompleteViewController" customModule="rentex_rent_car" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nNz-0d-Wwy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="schedule_complete" translatesAutoresizingMaskIntoConstraints="NO" id="qfe-o2-Dj6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="828"/>
+                            </imageView>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dU3-yH-ILb">
+                                <rect key="frame" x="165" y="366" width="66" height="65"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check-complete" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-Pm-yAc">
+                                        <rect key="frame" x="16.5" y="20" width="33" height="25"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8c5-Pm-yAc" firstAttribute="centerY" secondItem="dU3-yH-ILb" secondAttribute="centerY" id="RjT-rv-1rP"/>
+                                    <constraint firstItem="8c5-Pm-yAc" firstAttribute="centerX" secondItem="dU3-yH-ILb" secondAttribute="centerX" id="r5u-wM-OQo"/>
+                                    <constraint firstAttribute="height" constant="65" id="yJt-ZB-yJz"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carro alugado!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amz-Nw-OHD">
+                                <rect key="frame" x="20" y="462" width="356" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="A7W-7G-YXG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Archivo-SemiBold" family="Archivo" pointSize="30"/>
+                                <color key="textColor" name="white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egO-ho-1fs">
+                                <rect key="frame" x="56.5" y="515" width="283" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="5id-OK-xlF"/>
+                                </constraints>
+                                <string key="text">Agora você só precisa ir
+até a concessionária mais proxima para 
+pegar o seu automóvel.</string>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="15"/>
+                                <color key="textColor" name="gray200"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pFP-1i-0hb">
+                                <rect key="frame" x="167" y="654" width="80" height="56"/>
+                                <color key="backgroundColor" name="gray500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="973-Ty-daf"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="O04-X5-PdF"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="OK">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="handleConfirm:" destination="sMv-a2-jqB" eventType="touchUpInside" id="mRJ-MR-eRt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2DS-zl-w0I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dU3-yH-ILb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2DS-zl-w0I" secondAttribute="leading" constant="165" id="46m-W7-JhA"/>
+                            <constraint firstItem="qfe-o2-Dj6" firstAttribute="top" secondItem="2DS-zl-w0I" secondAttribute="top" id="A9t-GY-xkG"/>
+                            <constraint firstItem="2DS-zl-w0I" firstAttribute="trailing" secondItem="dU3-yH-ILb" secondAttribute="trailing" constant="183" id="ET4-yT-T1T"/>
+                            <constraint firstItem="Amz-Nw-OHD" firstAttribute="centerX" secondItem="egO-ho-1fs" secondAttribute="centerX" id="Ed6-6b-nSu"/>
+                            <constraint firstItem="2DS-zl-w0I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dU3-yH-ILb" secondAttribute="trailing" constant="165" id="G2s-gH-zeT"/>
+                            <constraint firstItem="2DS-zl-w0I" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Amz-Nw-OHD" secondAttribute="trailing" id="HpH-jS-1JP"/>
+                            <constraint firstItem="qfe-o2-Dj6" firstAttribute="top" secondItem="nNz-0d-Wwy" secondAttribute="top" id="ITt-5f-Y9i"/>
+                            <constraint firstItem="2DS-zl-w0I" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="pFP-1i-0hb" secondAttribute="bottom" constant="55" id="NvJ-Xw-n5W"/>
+                            <constraint firstItem="Amz-Nw-OHD" firstAttribute="leading" secondItem="nNz-0d-Wwy" secondAttribute="leadingMargin" id="O6S-AK-58M"/>
+                            <constraint firstItem="qfe-o2-Dj6" firstAttribute="top" secondItem="nNz-0d-Wwy" secondAttribute="top" id="Q6c-kh-Rby"/>
+                            <constraint firstItem="dU3-yH-ILb" firstAttribute="top" secondItem="2DS-zl-w0I" secondAttribute="top" constant="366" id="Sl2-Cc-z8W"/>
+                            <constraint firstItem="egO-ho-1fs" firstAttribute="top" secondItem="Amz-Nw-OHD" secondAttribute="bottom" constant="20" id="WpU-5y-55i"/>
+                            <constraint firstItem="pFP-1i-0hb" firstAttribute="centerX" secondItem="nNz-0d-Wwy" secondAttribute="centerX" id="dmO-99-SIQ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qfe-o2-Dj6" secondAttribute="bottom" constant="-58" id="eWz-6N-PrS"/>
+                            <constraint firstItem="dU3-yH-ILb" firstAttribute="centerX" secondItem="Amz-Nw-OHD" secondAttribute="centerX" id="hbd-ec-i8x"/>
+                            <constraint firstItem="qfe-o2-Dj6" firstAttribute="centerX" secondItem="nNz-0d-Wwy" secondAttribute="centerX" id="kAG-Sz-iXb"/>
+                            <constraint firstItem="egO-ho-1fs" firstAttribute="leading" secondItem="2DS-zl-w0I" secondAttribute="leading" constant="56.333333333333343" id="n8W-1y-Y8H"/>
+                            <constraint firstItem="pFP-1i-0hb" firstAttribute="top" secondItem="egO-ho-1fs" secondAttribute="bottom" constant="35" id="qet-1K-sBU"/>
+                            <constraint firstItem="qfe-o2-Dj6" firstAttribute="leading" secondItem="2DS-zl-w0I" secondAttribute="leading" id="vAX-sR-enq"/>
+                            <constraint firstItem="Amz-Nw-OHD" firstAttribute="top" secondItem="dU3-yH-ILb" secondAttribute="bottom" constant="31" id="vLN-HP-vUy"/>
+                            <constraint firstItem="dU3-yH-ILb" firstAttribute="leading" secondItem="2DS-zl-w0I" secondAttribute="leading" constant="165" id="vNJ-Ow-bVY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="viewCheck" destination="dU3-yH-ILb" id="HfW-yf-rV4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x0a-0E-79j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2713.04347826087" y="79.017857142857139"/>
         </scene>
     </scenes>
     <color key="tintColor" name="black"/>
@@ -663,6 +761,8 @@ fim do aluguel</string>
         <image name="arrow" width="7" height="11"/>
         <image name="arrow.right" catalog="system" width="128" height="95"/>
         <image name="calendar" width="48" height="48"/>
+        <image name="check-complete" width="33" height="25"/>
+        <image name="schedule_complete" width="375" height="812"/>
         <namedColor name="black">
             <color red="0.10588235294117647" green="0.10588235294117647" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -683,6 +783,9 @@ fim do aluguel</string>
         </namedColor>
         <namedColor name="red">
             <color red="0.86274509803921573" green="0.086274509803921567" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

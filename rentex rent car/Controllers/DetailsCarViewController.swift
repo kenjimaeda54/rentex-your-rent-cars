@@ -23,7 +23,7 @@ class DetailsCarViewController: UIViewController {
 	//MAR: - VARS
 	var accesories: [Acessories] =  []
 	var car: CarsModel?
-  let sectionInsets = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+ 
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()

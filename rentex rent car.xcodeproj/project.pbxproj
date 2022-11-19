@@ -16,6 +16,7 @@
 		81142C3E29210F15009851A6 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81142C3D29210F15009851A6 /* Factories.swift */; };
 		81209C4A2922A0A8001AFFA2 /* RentDateSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81209C492922A0A8001AFFA2 /* RentDateSelectedViewController.swift */; };
 		81379BEC2928550000D47159 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81379BEB2928550000D47159 /* RequestManager.swift */; };
+		8169684B292966F600FBCAC9 /* ScheduleCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169684A292966F600FBCAC9 /* ScheduleCompleteViewController.swift */; };
 		81B42400292051C700EE4F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B423FF292051C700EE4F58 /* AppDelegate.swift */; };
 		81B42402292051C700EE4F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B42401292051C700EE4F58 /* SceneDelegate.swift */; };
 		81B42407292051C700EE4F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B42405292051C700EE4F58 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		81142C3D29210F15009851A6 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		81209C492922A0A8001AFFA2 /* RentDateSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentDateSelectedViewController.swift; sourceTree = "<group>"; };
 		81379BEB2928550000D47159 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		8169684A292966F600FBCAC9 /* ScheduleCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCompleteViewController.swift; sourceTree = "<group>"; };
 		81B423FC292051C700EE4F58 /* rentex rent car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rentex rent car.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B423FF292051C700EE4F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81B42401292051C700EE4F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				81D2DE7F29216753009D9A97 /* DetailsCarViewController.swift */,
 				81209C492922A0A8001AFFA2 /* RentDateSelectedViewController.swift */,
 				81E1B5432925BEF200C36CC3 /* ReserveCarViewController.swift */,
+				8169684A292966F600FBCAC9 /* ScheduleCompleteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				810E3DF5292066BD00AF1BCC /* SchedulesByCars.swift in Sources */,
 				81E1B5442925BEF200C36CC3 /* ReserveCarViewController.swift in Sources */,
 				81D2DE8029216753009D9A97 /* DetailsCarViewController.swift in Sources */,
+				8169684B292966F600FBCAC9 /* ScheduleCompleteViewController.swift in Sources */,
 				810E3DF02920631700AF1BCC /* HomeTableViewController.swift in Sources */,
 				810E3DF32920650000AF1BCC /* CarsModel.swift in Sources */,
 				81B42400292051C700EE4F58 /* AppDelegate.swift in Sources */,
