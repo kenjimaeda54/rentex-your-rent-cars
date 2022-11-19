@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct SchedulesByCars {
+struct SchedulesByCars: Decodable {
 	
-	let id: String
+	let id: Int
 	let unavailableDates: [String]
-	
+	let carId: Int
 }
 
 

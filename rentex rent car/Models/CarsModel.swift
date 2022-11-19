@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct CarsModel {
+
+struct CarsModel: Decodable {
 	
-	let id: String
+	let id: Int
 	let brand: String
 	let name: String
 	let about: String
@@ -17,10 +18,12 @@ struct CarsModel {
 	let fuelType: String
 	let thumbNail: String
 	let accessories: [Acessories]
+	let photos: [String]
 	
 }
 
-struct Rent {
+
+struct Rent: Decodable {
 	
 	let period: String
 	let price: Double
@@ -28,7 +31,7 @@ struct Rent {
 }
 
 
-struct Acessories {
+struct Acessories: Decodable {
 	
  let type: String
 	let name: String

@@ -26,8 +26,8 @@ class RentDateSelectedViewController: UIViewController {
 	@IBOutlet weak var fsCalendar: FSCalendar!
 	
 	//MARK: - Vars
-	var carId: String?
-	let carUnavailableDates: [SchedulesByCars] = MockData().schedulesByCar
+	var carId: Int?
+	let carUnavailableDates: [SchedulesByCars] = []
 	var orderDate: [DateInRegion]!
 	var dateSelected: [String] = []
 	let labelFinalDate = makeLabel("")
@@ -92,7 +92,7 @@ class RentDateSelectedViewController: UIViewController {
 				finalDate = collectionDate[0].date.toFormat("yyyy/MM/dd")
 			}
 			
-			let dateRangeSelectedRent: [String:String] = ["initialDate":initialDate,"finalDate": finalDate ,"carId": self.carId!   ]
+			let dateRangeSelectedRent: [String:String] = ["initialDate":initialDate,"finalDate": finalDate ,"carId": "\(self.carId!)"   ]
 			self.performSegue(withIdentifier: "reserveSegue", sender: dateRangeSelectedRent)
 			
 		}

@@ -10,16 +10,14 @@ import UIKit
 class HomeTableViewController: UITableViewController {
 	
 	//MARK: - Vars
-	let cars: [CarsModel] = [
-		CarsModel(id:  "535e8de8-721b-4bac-8b72-7d29be7da467", brand: "Audi", name:  "RS 5 Coupé", about:  "O carro ainda tem sistema de tração nas quatro rodas Quattro com diferencial traseiro esportivo de série. De acordo com a Audi, ele faz o mesmo em 3,8 segundos na Sportback.", rent: Rent(period:  "Ao dia", price: 120), fuelType: "Gasolina", thumbNail:  "Corvete", accessories: [Acessories(type:  "speed", name:  "250km/h"),Acessories(type: "acceleration", name:  "3.8s")]),
-		CarsModel(id: "ffb71f55-818a-48b1-b7d2-2efc406ede25", brand:  "Porsche", name:"Panamera", about:   "O Panamera é um automóvel de luxo coupé com porte grande. Tem motorização dianteira V6 e V8. A tração é integral com uma caixa PDK de sete mudanças e dupla embreagem.", rent: Rent(period:  "Ao dia", price: 120), fuelType: "Gasolina", thumbNail:   "Porche", accessories: [Acessories(type:  "speed", name:  "250km/h"),Acessories(type: "acceleration", name:  "3.8s")]),
-	]
 	let backgroundNavigationBar = UIView()
-	
+	let cars: [CarsModel] = []
+	var managerModels = RequestManager()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+		managerModels.delegate = self
+		managerModels.fetchData("http://localhost:3000/cars")
 		
 		//registrar .xib essencial
 		//nome identico da classe
@@ -120,6 +118,21 @@ class HomeTableViewController: UITableViewController {
 			let vc = segue.destination as! DetailsCarViewController
 			vc.car = sender as? CarsModel
 		}
+	}
+	
+	
+}
+
+//MARk: - RequestDelegate
+extension HomeTableViewController: RequestDelegate {
+	func didUpdateRequest(_ data: [CarsModel]) {
+	   print(data)
+	}
+	
+
+	
+	func didFailWithError(_ error: Error) {
+		print(error)
 	}
 	
 	

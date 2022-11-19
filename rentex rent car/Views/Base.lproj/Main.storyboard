@@ -62,7 +62,7 @@
                                 <rect key="frame" x="16" y="15.999999999999986" width="358" height="232.66666666666663"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CHEVROLET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGb-qc-C4V">
-                                <rect key="frame" x="15.999999999999996" y="297.66666666666669" width="61.666666666666657" height="16"/>
+                                <rect key="frame" x="16.000000000000004" y="297.66666666666669" width="61.333333333333343" height="16"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="10"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
@@ -397,7 +397,7 @@ fim do aluguel</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CHEVROLET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxt-QK-00h">
-                                <rect key="frame" x="15.999999999999996" y="227.66666666666669" width="61.666666666666657" height="12"/>
+                                <rect key="frame" x="16.000000000000004" y="227.33333333333331" width="61.333333333333343" height="12"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="12" id="0cb-Nb-qYR"/>
                                 </constraints>
@@ -406,19 +406,19 @@ fim do aluguel</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AO DIA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-2f-w65">
-                                <rect key="frame" x="340" y="226.66666666666669" width="34" height="11"/>
+                                <rect key="frame" x="340" y="226.33333333333331" width="34" height="11"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="10"/>
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 580" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rk6-eN-cGr">
-                                <rect key="frame" x="294" y="253.66666666666669" width="80" height="27"/>
+                                <rect key="frame" x="294" y="253.33333333333334" width="80" height="27.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="25"/>
                                 <color key="textColor" name="red"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corvette Z06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fl-gH-9L7">
-                                <rect key="frame" x="16" y="253.66666666666669" width="147" height="29"/>
+                                <rect key="frame" x="16" y="253.33333333333331" width="147" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="AC0-00-g1H"/>
                                 </constraints>
@@ -512,19 +512,19 @@ fim do aluguel</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATÉ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-RF-ENf">
-                                        <rect key="frame" x="217" y="8" width="20" height="11"/>
+                                        <rect key="frame" x="217" y="8" width="19.333333333333343" height="11"/>
                                         <fontDescription key="fontDescription" name="Archivo-SemiBold" family="Archivo" pointSize="10"/>
                                         <color key="textColor" name="gray200"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="18/06/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiS-gf-LTO">
-                                        <rect key="frame" x="63" y="26" width="82" height="19"/>
+                                        <rect key="frame" x="63" y="27.333333333333371" width="82" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
                                         <color key="textColor" name="gray500"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20/06/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdl-VE-4On">
-                                        <rect key="frame" x="217" y="26" width="141" height="19"/>
+                                        <rect key="frame" x="217" y="27.333333333333371" width="141" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
                                         <color key="textColor" name="gray500"/>
                                         <nil key="highlightedColor"/>
@@ -543,13 +543,13 @@ fim do aluguel</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 580 x3 diárias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef8-e5-ReY">
-                                        <rect key="frame" x="0.0" y="105" width="127.66666666666667" height="18.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="105" width="127.33333333333333" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
                                         <color key="textColor" name="gray500"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 2.900" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibx-lL-wqD">
-                                        <rect key="frame" x="217" y="97" width="141" height="26.666666666666671"/>
+                                        <rect key="frame" x="217" y="96.333333333333371" width="141" height="26.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="24"/>
                                         <color key="textColor" name="green"/>
                                         <nil key="highlightedColor"/>
