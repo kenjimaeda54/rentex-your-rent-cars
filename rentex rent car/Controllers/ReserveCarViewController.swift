@@ -128,7 +128,6 @@ extension ReserveCarViewController: UICollectionViewDelegate,UICollectionViewDat
 	
 }
 
-//MARK- Testar o modal de alarme
 //MARK: -PostDelegate
 extension ReserveCarViewController: PostDelegate {
 	func didFailWithErrorPost(_ error: String) {

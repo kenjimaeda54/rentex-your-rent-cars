@@ -25,46 +25,65 @@ protocol PostDelegate {
 	
 }
 
+protocol SchedulesByUser {
+	func didUpdateRequestSchedulesByUser(_ data: [SchedulesByUserModel])
+	func didFailWithErrorSchedulesByUser(_ error:Error)
+	
+}
+
 struct RequestManager {
 	
 	var delegateCar: CardDelegate?
 	var delegateSchedules: SchedulesDelegate?
 	var delegatePost: PostDelegate?
+	var delegateSchedulesByUser: SchedulesByUser?
 	
 	func fetchData(url: String,typeRequest: String? = "") {
 		
-			AF.request(url).response { response in
-				
-				if let error =  response.error {
-					print(error)
-					return
-				}
-				
-				if typeRequest == "cars" {
-					
-					if let data = response.data {
-						do {
-							let data = try JSONDecoder().decode([CarsModel].self, from: data)
-							delegateCar?.didUpdateRequestCars(data)
-						}catch{
-							delegateCar?.didFailWithErrorCar(error)
-						}
-					}
-					
-				}else {
-					if let data = response.data {
-						do {
-							let data = try JSONDecoder().decode(SchedulesByCarsModel.self, from: data)
-							delegateSchedules?.didUpdateRequestSchedules(data)
-						}catch{
-							delegateSchedules?.didFailWithErrorSchedules(error)
-						}
-					}
-				}
+		AF.request(url).response { response in
+			
+			if let error =  response.error {
+				print(error)
+				return
 			}
 			
-		
-		
+			if typeRequest == "cars" {
+				
+				if let data = response.data {
+					do {
+						let data = try JSONDecoder().decode([CarsModel].self, from: data)
+						delegateCar?.didUpdateRequestCars(data)
+					}catch{
+						delegateCar?.didFailWithErrorCar(error)
+					}
+				}
+				return
+			}
+			
+			
+			
+			if typeRequest == "schedulesByUser" {
+				
+				if let data = response.data {
+					do {
+						let data = try JSONDecoder().decode([SchedulesByUserModel].self, from: data)
+						delegateSchedulesByUser?.didUpdateRequestSchedulesByUser(data)
+					}catch{
+						delegateSchedulesByUser?.didFailWithErrorSchedulesByUser(error)
+					}
+				}
+				return
+			}
+			
+			if let data = response.data {
+				do {
+					let data = try JSONDecoder().decode(SchedulesByCarsModel.self, from: data)
+					delegateSchedules?.didUpdateRequestSchedules(data)
+				}catch{
+					delegateSchedules?.didFailWithErrorSchedules(error)
+				}
+			}
+		}
 	}
 	
 	func postData(parameters: [String:Any],url: String) {
@@ -76,7 +95,7 @@ struct RequestManager {
 				print(error)
 				delegatePost?.didFailWithErrorPost("Não pode alugar este carro, porque  está  na sua lista de  alugados")
 			case .success(let data):
-				 print(data)
+				print(data)
 				delegatePost?.shouldReturnWithSucess(true)
 			}
 			

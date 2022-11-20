@@ -199,7 +199,6 @@ class RentDateSelectedViewController: UIViewController {
 		
 		returnCollectionDateSelected{
 			//sortear para pegar a data mais alta
-			//MARK: - fazer um foreach e comparar as datas dentro
 			let formatSorted = $0[0].toFormat("yyyy/MM/dd")
 			self.labelFinalDate.text = formatSorted
 		}
@@ -227,7 +226,6 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 	
 	//dentro de cada mês existem dias que não estão disponíveis,
 	//na lógica abaixo  impedira de selecionar esses dias
-	//MARK: - Apagar dias não disponíveis para aluguel
 	func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
 		return dateAvailabel(date)
 	}

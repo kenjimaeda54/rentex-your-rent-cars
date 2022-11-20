@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UserSchedulesModel: Codable {
+struct SchedulesByUserModel: Codable {
 	let carId: Int
 	let totalValue: String
 	let startDate: String

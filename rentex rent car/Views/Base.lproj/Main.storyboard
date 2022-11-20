@@ -11,11 +11,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Archivo-Bold.ttf">
+            <string>Archivo-Bold</string>
+        </array>
         <array key="Archivo-ExtraBold.ttf">
             <string>Archivo-ExtraBold</string>
         </array>
         <array key="Archivo-Medium.ttf">
             <string>Archivo-Medium</string>
+        </array>
+        <array key="Archivo-Regular.ttf">
+            <string>Archivo-Regular</string>
         </array>
         <array key="Archivo-SemiBold.ttf">
             <string>Archivo-SemiBold</string>
@@ -44,11 +50,92 @@
                     <navigationItem key="navigationItem" id="cff-df-Wq8"/>
                     <connections>
                         <segue destination="I5o-Is-zx0" kind="show" identifier="detailsSegue" id="U2g-E5-bKU"/>
+                        <segue destination="5Fb-91-OJB" kind="show" id="Iwy-Bh-ThD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ag-qX-0SA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-384.05797101449281" y="79.017857142857139"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CID-26-kR3">
+            <objects>
+                <viewController id="5Fb-91-OJB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ih-7f-vqn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="752"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agendamentos feitos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qs-Ri-qyF">
+                                <rect key="frame" x="10" y="182" width="152" height="19"/>
+                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="15"/>
+                                <color key="textColor" name="gray300"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ORA-ZK-Nsm">
+                                <rect key="frame" x="0.0" y="236" width="414" height="516"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5Fb-91-OJB" id="lKi-IB-EcB"/>
+                                    <outlet property="delegate" destination="5Fb-91-OJB" id="VY3-cL-Bqc"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJd-ve-GXn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQN-OV-SWJ">
+                                        <rect key="frame" x="10" y="5" width="302.5" height="65.5"/>
+                                        <string key="text">Seus agendamentos,estão aqui.</string>
+                                        <fontDescription key="fontDescription" name="Archivo-Bold" family="Archivo" pointSize="30"/>
+                                        <color key="textColor" name="white"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conforto, segurança e praticidade." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZZ-VG-rjz">
+                                        <rect key="frame" x="10" y="87.5" width="394" height="17"/>
+                                        <fontDescription key="fontDescription" name="Archivo-Regular" family="Archivo" pointSize="15"/>
+                                        <color key="textColor" name="white"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="black"/>
+                                <constraints>
+                                    <constraint firstItem="lZZ-VG-rjz" firstAttribute="top" secondItem="zQN-OV-SWJ" secondAttribute="bottom" constant="17" id="5zq-nf-67f"/>
+                                    <constraint firstItem="lZZ-VG-rjz" firstAttribute="leading" secondItem="hJd-ve-GXn" secondAttribute="leading" constant="10" id="7ps-Fe-GrV"/>
+                                    <constraint firstAttribute="trailing" secondItem="lZZ-VG-rjz" secondAttribute="trailing" constant="10" id="cgs-KK-Jza"/>
+                                    <constraint firstItem="zQN-OV-SWJ" firstAttribute="leading" secondItem="hJd-ve-GXn" secondAttribute="leading" constant="10" id="grp-yO-3HT"/>
+                                    <constraint firstItem="zQN-OV-SWJ" firstAttribute="top" secondItem="hJd-ve-GXn" secondAttribute="top" constant="5" id="luo-L1-xr2"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zQN-OV-SWJ" secondAttribute="trailing" constant="20" symbolic="YES" id="phh-eT-uYc"/>
+                                    <constraint firstAttribute="height" constant="162" id="v9x-R2-vat"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9R7-Ll-RSX">
+                                <rect key="frame" x="378.5" y="182" width="25.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o06-5Q-MDn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hJd-ve-GXn" firstAttribute="leading" secondItem="o06-5Q-MDn" secondAttribute="leading" id="DDJ-ND-NUM"/>
+                            <constraint firstItem="ORA-ZK-Nsm" firstAttribute="leading" secondItem="o06-5Q-MDn" secondAttribute="leading" id="Ken-sk-jIS"/>
+                            <constraint firstItem="ORA-ZK-Nsm" firstAttribute="top" secondItem="1qs-Ri-qyF" secondAttribute="bottom" constant="35" id="NEy-Pa-31c"/>
+                            <constraint firstItem="1qs-Ri-qyF" firstAttribute="top" secondItem="hJd-ve-GXn" secondAttribute="bottom" constant="20" id="SG4-Pf-G0D"/>
+                            <constraint firstItem="o06-5Q-MDn" firstAttribute="trailing" secondItem="9R7-Ll-RSX" secondAttribute="trailing" constant="10" id="VWV-gh-ewo"/>
+                            <constraint firstItem="9R7-Ll-RSX" firstAttribute="top" secondItem="hJd-ve-GXn" secondAttribute="bottom" constant="20" id="Vcr-hi-K4E"/>
+                            <constraint firstItem="ORA-ZK-Nsm" firstAttribute="trailing" secondItem="o06-5Q-MDn" secondAttribute="trailing" id="dfB-GY-XVK"/>
+                            <constraint firstAttribute="bottom" secondItem="ORA-ZK-Nsm" secondAttribute="bottom" id="fsi-i6-TYk"/>
+                            <constraint firstItem="hJd-ve-GXn" firstAttribute="trailing" secondItem="o06-5Q-MDn" secondAttribute="trailing" id="lg7-2f-Jff"/>
+                            <constraint firstItem="9R7-Ll-RSX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1qs-Ri-qyF" secondAttribute="trailing" constant="8" symbolic="YES" id="mUv-R6-DqW"/>
+                            <constraint firstItem="hJd-ve-GXn" firstAttribute="top" secondItem="o06-5Q-MDn" secondAttribute="top" id="ot5-Cg-Ygc"/>
+                            <constraint firstItem="1qs-Ri-qyF" firstAttribute="leading" secondItem="o06-5Q-MDn" secondAttribute="leading" constant="10" id="uZL-LS-jq2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="my9-9s-7oO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DBM-yW-3k0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372.46376811594206" y="823.66071428571422"/>
         </scene>
         <!--Details Car View Controller-->
         <scene sceneID="t9z-N2-khL">

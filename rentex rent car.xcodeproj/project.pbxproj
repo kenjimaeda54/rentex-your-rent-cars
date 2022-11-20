@@ -16,13 +16,16 @@
 		81142C3E29210F15009851A6 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81142C3D29210F15009851A6 /* Factories.swift */; };
 		81209C4A2922A0A8001AFFA2 /* RentDateSelectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81209C492922A0A8001AFFA2 /* RentDateSelectedViewController.swift */; };
 		81379BEC2928550000D47159 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81379BEB2928550000D47159 /* RequestManager.swift */; };
+		813932A7292A3BBE00C00F45 /* RentsByUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813932A5292A3BBE00C00F45 /* RentsByUserTableViewCell.swift */; };
+		813932A8292A3BBE00C00F45 /* RentsByUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813932A6292A3BBE00C00F45 /* RentsByUserTableViewCell.xib */; };
 		8169684B292966F600FBCAC9 /* ScheduleCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8169684A292966F600FBCAC9 /* ScheduleCompleteViewController.swift */; };
+		817F3F8E292A5333001875A7 /* SchedulesByUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817F3F8D292A5333001875A7 /* SchedulesByUserViewController.swift */; };
 		81B42400292051C700EE4F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B423FF292051C700EE4F58 /* AppDelegate.swift */; };
 		81B42402292051C700EE4F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B42401292051C700EE4F58 /* SceneDelegate.swift */; };
 		81B42407292051C700EE4F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B42405292051C700EE4F58 /* Main.storyboard */; };
 		81B42409292051C800EE4F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81B42408292051C800EE4F58 /* Assets.xcassets */; };
 		81B4240C292051C800EE4F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81B4240A292051C800EE4F58 /* LaunchScreen.storyboard */; };
-		81CCB99E292996D5009A58DB /* UserSchedulesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB99D292996D5009A58DB /* UserSchedulesModel.swift */; };
+		81CCB99E292996D5009A58DB /* SchedulesByUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CCB99D292996D5009A58DB /* SchedulesByUserModel.swift */; };
 		81D2DE7E2921619A009D9A97 /* DetailsCarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2DE7D2921619A009D9A97 /* DetailsCarCollectionViewCell.swift */; };
 		81D2DE8029216753009D9A97 /* DetailsCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2DE7F29216753009D9A97 /* DetailsCarViewController.swift */; };
 		81E1B5442925BEF200C36CC3 /* ReserveCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1B5432925BEF200C36CC3 /* ReserveCarViewController.swift */; };
@@ -41,7 +44,10 @@
 		81142C3D29210F15009851A6 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
 		81209C492922A0A8001AFFA2 /* RentDateSelectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentDateSelectedViewController.swift; sourceTree = "<group>"; };
 		81379BEB2928550000D47159 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		813932A5292A3BBE00C00F45 /* RentsByUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentsByUserTableViewCell.swift; sourceTree = "<group>"; };
+		813932A6292A3BBE00C00F45 /* RentsByUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RentsByUserTableViewCell.xib; sourceTree = "<group>"; };
 		8169684A292966F600FBCAC9 /* ScheduleCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCompleteViewController.swift; sourceTree = "<group>"; };
+		817F3F8D292A5333001875A7 /* SchedulesByUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesByUserViewController.swift; sourceTree = "<group>"; };
 		81B423FC292051C700EE4F58 /* rentex rent car.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rentex rent car.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B423FF292051C700EE4F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81B42401292051C700EE4F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +55,7 @@
 		81B42408292051C800EE4F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81B4240B292051C800EE4F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81B4240D292051C800EE4F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81CCB99D292996D5009A58DB /* UserSchedulesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSchedulesModel.swift; sourceTree = "<group>"; };
+		81CCB99D292996D5009A58DB /* SchedulesByUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulesByUserModel.swift; sourceTree = "<group>"; };
 		81D2DE7D2921619A009D9A97 /* DetailsCarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCarCollectionViewCell.swift; sourceTree = "<group>"; };
 		81D2DE7F29216753009D9A97 /* DetailsCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCarViewController.swift; sourceTree = "<group>"; };
 		81D2DEDB2921752C009D9A97 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 				810E3C23292055D000AF1BCC /* CarTableViewCell.swift */,
 				81D2DE7D2921619A009D9A97 /* DetailsCarCollectionViewCell.swift */,
 				81E1B5482925C89600C36CC3 /* ReserveCollectionViewCell.swift */,
+				813932A5292A3BBE00C00F45 /* RentsByUserTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 				81209C492922A0A8001AFFA2 /* RentDateSelectedViewController.swift */,
 				81E1B5432925BEF200C36CC3 /* ReserveCarViewController.swift */,
 				8169684A292966F600FBCAC9 /* ScheduleCompleteViewController.swift */,
+				817F3F8D292A5333001875A7 /* SchedulesByUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -131,7 +139,7 @@
 				810E3DF22920650000AF1BCC /* CarsModel.swift */,
 				810E3DF4292066BD00AF1BCC /* SchedulesByCarsModel.swift */,
 				81379BEB2928550000D47159 /* RequestManager.swift */,
-				81CCB99D292996D5009A58DB /* UserSchedulesModel.swift */,
+				81CCB99D292996D5009A58DB /* SchedulesByUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +198,7 @@
 		81B424192920558A00EE4F58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				813932A6292A3BBE00C00F45 /* RentsByUserTableViewCell.xib */,
 				810E3DEB2920619200AF1BCC /* CarTableViewCell.xib */,
 				81B42405292051C700EE4F58 /* Main.storyboard */,
 				81B4240A292051C800EE4F58 /* LaunchScreen.storyboard */,
@@ -318,6 +327,7 @@
 			files = (
 				81B4240C292051C800EE4F58 /* LaunchScreen.storyboard in Resources */,
 				81B42409292051C800EE4F58 /* Assets.xcassets in Resources */,
+				813932A8292A3BBE00C00F45 /* RentsByUserTableViewCell.xib in Resources */,
 				810E3DE92920619200AF1BCC /* CarTableViewCell.xib in Resources */,
 				81B42407292051C700EE4F58 /* Main.storyboard in Resources */,
 			);
@@ -374,6 +384,8 @@
 			files = (
 				81142C3E29210F15009851A6 /* Factories.swift in Sources */,
 				810E3DF5292066BD00AF1BCC /* SchedulesByCarsModel.swift in Sources */,
+				813932A7292A3BBE00C00F45 /* RentsByUserTableViewCell.swift in Sources */,
+				817F3F8E292A5333001875A7 /* SchedulesByUserViewController.swift in Sources */,
 				81E1B5442925BEF200C36CC3 /* ReserveCarViewController.swift in Sources */,
 				81D2DE8029216753009D9A97 /* DetailsCarViewController.swift in Sources */,
 				8169684B292966F600FBCAC9 /* ScheduleCompleteViewController.swift in Sources */,
@@ -383,7 +395,7 @@
 				81209C4A2922A0A8001AFFA2 /* RentDateSelectedViewController.swift in Sources */,
 				81B42402292051C700EE4F58 /* SceneDelegate.swift in Sources */,
 				81E1B5492925C89600C36CC3 /* ReserveCollectionViewCell.swift in Sources */,
-				81CCB99E292996D5009A58DB /* UserSchedulesModel.swift in Sources */,
+				81CCB99E292996D5009A58DB /* SchedulesByUserModel.swift in Sources */,
 				81379BEC2928550000D47159 /* RequestManager.swift in Sources */,
 				81D2DE7E2921619A009D9A97 /* DetailsCarCollectionViewCell.swift in Sources */,
 				810E3C25292055D000AF1BCC /* CarTableViewCell.swift in Sources */,
