@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol CardDelegate {
 	func didUpdateRequestCars(_ data: [CarsModel])
@@ -13,59 +14,73 @@ protocol CardDelegate {
 }
 
 protocol SchedulesDelegate {
-	func didUpdateRequestSchedules(_ data: SchedulesByCars)
+	func didUpdateRequestSchedules(_ data: SchedulesByCarsModel)
 	func didFailWithErrorSchedules(_ error:Error)
+}
+
+protocol PostDelegate {
+	
+	func didFailWithErrorPost(_ error: String)
+	func shouldReturnWithSucess(_ sucess: Bool)
+	
 }
 
 struct RequestManager {
 	
 	var delegateCar: CardDelegate?
 	var delegateSchedules: SchedulesDelegate?
+	var delegatePost: PostDelegate?
 	
-	func fetchData(noSafeUrl: String,typeRequest: String? = "") {
-		let urlSecure = noSafeUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+	func fetchData(url: String,typeRequest: String? = "") {
 		
-		if let url = URL(string: urlSecure) {
-			let session = URLSession(configuration: .default)
-			
-			let task = session.dataTask(with: url) { (data,response,error) in
+			AF.request(url).response { response in
 				
-				if error != nil {
+				if let error =  response.error {
 					print(error)
+					return
 				}
 				
-				guard let safeData = data else {return}
-				
-				let json = JSONDecoder()
 				if typeRequest == "cars" {
-					do {
-						let request = try json.decode([CarsModel].self, from: safeData)
-						delegateCar?.didUpdateRequestCars(request)
-						
-					}catch {
-						delegateCar?.didFailWithErrorCar(error)
+					
+					if let data = response.data {
+						do {
+							let data = try JSONDecoder().decode([CarsModel].self, from: data)
+							delegateCar?.didUpdateRequestCars(data)
+						}catch{
+							delegateCar?.didFailWithErrorCar(error)
+						}
 					}
 					
 				}else {
-					
-					do {
-						let request = try json.decode(SchedulesByCars.self, from: safeData)
-						delegateSchedules?.didUpdateRequestSchedules(request)
-						
-					}catch {
-						delegateSchedules?.didFailWithErrorSchedules(error)
+					if let data = response.data {
+						do {
+							let data = try JSONDecoder().decode(SchedulesByCarsModel.self, from: data)
+							delegateSchedules?.didUpdateRequestSchedules(data)
+						}catch{
+							delegateSchedules?.didFailWithErrorSchedules(error)
+						}
 					}
-					
 				}
-			
-				
 			}
-			task.resume()
 			
-		}
+		
 		
 	}
 	
-	
+	func postData(parameters: [String:Any],url: String) {
+		
+		AF.request(url,method: .post,parameters: parameters,encoding: JSONEncoding.default).validate(statusCode: 200..<299).responseData {response  in
+			
+			switch response.result {
+			case .failure(let error):
+				print(error)
+				delegatePost?.didFailWithErrorPost("Não pode alugar este carro, porque  está  na sua lista de  alugados")
+			case .success(let data):
+				 print(data)
+				delegatePost?.shouldReturnWithSucess(true)
+			}
+			
+		}
+	}
 	
 }

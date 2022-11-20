@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SchedulesByCars: Decodable {
+struct SchedulesByCarsModel: Codable {
 	
 	let id: Int
 	let unavailableDates: [String]

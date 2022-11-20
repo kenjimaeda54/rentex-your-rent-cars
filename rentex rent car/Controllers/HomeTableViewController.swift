@@ -14,17 +14,20 @@ class HomeTableViewController: UITableViewController {
 	var cars: [CarsModel] = []
 	var managerModels = RequestManager()
 	let labQuantityCars = makeLabel("Total de 0")
-	
+
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		managerModels.delegateCar = self
-		managerModels.fetchData(noSafeUrl:"http://localhost:3000/cars",  typeRequest: "cars")
+		managerModels.fetchData(url:"http://localhost:3000/cars",  typeRequest: "cars")
 		
 		//registrar .xib essencial
 		//nome identico da classe
 		tableView.register(UINib(nibName: "CarTableViewCell", bundle: nil),forCellReuseIdentifier: "cellCars")
 		
 		
+		
+	
 	}
 	
 	override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -35,6 +38,7 @@ class HomeTableViewController: UITableViewController {
 		super.viewDidAppear(animated)
 		
 		prepareViewNavigation()
+	  
 		
 		//para lightContentRefletir precisa o estilo ser .black
 		navigationController?.navigationBar.barStyle = .black
@@ -44,14 +48,22 @@ class HomeTableViewController: UITableViewController {
 		}
 	}
 	
+
+	
 	//adicionar view ao navigation bar
 	func prepareViewNavigation() {
 		let imgLogotipo = makeImg("logotipo")
+		let button = makeButton("Alugados")
+		
+		button.addTarget(self, action: #selector(goScreenRentCars), for: .touchUpInside)
+		
 		backgroundNavigationBar.addSubview(imgLogotipo)
 		backgroundNavigationBar.addSubview(labQuantityCars)
+		backgroundNavigationBar.addSubview(button)
 		backgroundNavigationBar.translatesAutoresizingMaskIntoConstraints = false
-		
+				
 		navigationController?.navigationBar.addSubview(backgroundNavigationBar)
+		
 		
 		if let navigationView = navigationController?.navigationBar {
 			NSLayoutConstraint.activate([
@@ -73,12 +85,22 @@ class HomeTableViewController: UITableViewController {
 				labQuantityCars.topAnchor.constraint(equalTo: backgroundNavigationBar.topAnchor,constant: 20),
 				
 				
+				button.trailingAnchor.constraint(equalTo: labQuantityCars.trailingAnchor, constant: 0),
+				button.bottomAnchor.constraint(equalTo: labQuantityCars.topAnchor, constant: -2),
+				button.topAnchor.constraint(equalTo: backgroundNavigationBar.topAnchor, constant: 10)
+				
+				
 			])
 			
 		}
 		
 		
 	}
+	
+	
+	@objc func goScreenRentCars() {
+	}
+	
 	
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
@@ -123,7 +145,7 @@ class HomeTableViewController: UITableViewController {
 }
 
 //MARk: - RequestDelegate
-extension HomeTableViewController: CardDelegate {
+extension HomeTableViewController:  CardDelegate {
 	func didUpdateRequestCars(_ data: [CarsModel]) {
 		cars = data
 		DispatchQueue.main.async {

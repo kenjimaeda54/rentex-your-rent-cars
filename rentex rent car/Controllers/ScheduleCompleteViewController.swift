@@ -29,6 +29,9 @@ class ScheduleCompleteViewController: UIViewController {
 	}
     
 	@IBAction func handleConfirm(_ sender: Any) {
+		
+		navigationController?.popToRootViewController(animated: true)
+		
 	}
 
 

@@ -48,7 +48,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ag-qX-0SA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-383.07692307692304" y="79.620853080568722"/>
+            <point key="canvasLocation" x="-384.05797101449281" y="79.017857142857139"/>
         </scene>
         <!--Details Car View Controller-->
         <scene sceneID="t9z-N2-khL">
@@ -541,13 +541,13 @@ fim do aluguel</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 580 x3 diárias" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef8-e5-ReY">
-                                        <rect key="frame" x="0.0" y="105" width="127.5" height="17.5"/>
+                                        <rect key="frame" x="0.0" y="105" width="127.5" height="18.5"/>
                                         <fontDescription key="fontDescription" name="Inter-Medium" family="Inter" pointSize="15"/>
                                         <color key="textColor" name="gray500"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 2.900" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibx-lL-wqD">
-                                        <rect key="frame" x="217" y="96.5" width="165" height="26"/>
+                                        <rect key="frame" x="217" y="97.5" width="165" height="26"/>
                                         <fontDescription key="fontDescription" name="Archivo-Medium" family="Archivo" pointSize="24"/>
                                         <color key="textColor" name="green"/>
                                         <nil key="highlightedColor"/>

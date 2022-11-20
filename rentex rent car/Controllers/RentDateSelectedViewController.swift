@@ -39,7 +39,7 @@ class RentDateSelectedViewController: UIViewController {
 		super.viewDidLoad()
 		managerRequest.delegateSchedules = self
 		if let id = car?.id {
-			managerRequest.fetchData(noSafeUrl: "http://localhost:3000/schedules/\(id)")
+			managerRequest.fetchData(url: "http://localhost:3000/schedules/\(id)")
 		}
 	}
 	
@@ -48,7 +48,7 @@ class RentDateSelectedViewController: UIViewController {
 		super.viewWillAppear(animated)
 		
 		if let id = car?.id {
-			managerRequest.fetchData(noSafeUrl: "http://localhost:3000/schedules/\(id)")
+			managerRequest.fetchData(url: "http://localhost:3000/schedules/\(id)")
 		}
 		
 		//mudar a cor do butao de voltar
@@ -278,7 +278,7 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 }
 
 extension RentDateSelectedViewController: SchedulesDelegate {
-	func didUpdateRequestSchedules(_ data: SchedulesByCars) {
+	func didUpdateRequestSchedules(_ data: SchedulesByCarsModel) {
 		
 		
 		DispatchQueue.main.async {

@@ -6,8 +6,8 @@ target 'rentex rent car' do
   use_frameworks!
 
   # Pods for rentex rent car
-  pod 'SwiftSVG', '~> 2.0'
   pod 'SwiftDate', '~> 5.0'
   pod 'FSCalendar'
+  pod 'Alamofire'
 
 end

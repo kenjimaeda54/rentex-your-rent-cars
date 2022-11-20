@@ -36,3 +36,12 @@ func makeNavigationController(color: String,navigation: UINavigationBar) {
 	
 	
 }
+
+func makeButton(_ title: String) -> UIButton { 
+	let button = UIButton()
+	button.translatesAutoresizingMaskIntoConstraints = false
+	button.backgroundColor = .clear
+	button.setTitle(title, for: .normal)
+	button.setTitleColor(UIColor(named: "gray300"), for: .normal)
+	return button;
+}
