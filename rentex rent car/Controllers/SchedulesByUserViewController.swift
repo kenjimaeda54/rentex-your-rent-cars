@@ -73,6 +73,7 @@ extension SchedulesByUserViewController: SchedulesByUserDelegate {
 	func didUpdateRequestSchedulesByUser(_ data: [SchedulesByUserModel]) {
 		DispatchQueue.main.async {
 			self.schedulesByUser = data
+			self.labTotalSchedules.text = "\(data.count)"
 			self.tableView.reloadData()
 		}
 		

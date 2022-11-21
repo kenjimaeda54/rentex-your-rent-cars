@@ -39,8 +39,8 @@ class RentsByUserTableViewCell: UITableViewCell {
 					self.labName.text  = schedules.cars[0].name
 					self.labPriceDiary.text = "\(schedules.cars[0].rent.price)"
 					self.imgType.image = UIImage(named:  schedules.cars[0].fuelType)
-					self.labStartDate.text = schedules.user.startDate
-					self.labEndDate.text = schedules.user.endDate
+					self.labEndDate.text = schedules.user.startDate
+					self.labStartDate.text = schedules.user.endDate
 					self.labPriceTotal.text = schedules.user.totalValue
 					
 				}
