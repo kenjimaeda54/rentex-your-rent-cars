@@ -50,17 +50,17 @@
                     <navigationItem key="navigationItem" id="cff-df-Wq8"/>
                     <connections>
                         <segue destination="I5o-Is-zx0" kind="show" identifier="detailsSegue" id="U2g-E5-bKU"/>
-                        <segue destination="5Fb-91-OJB" kind="show" id="Iwy-Bh-ThD"/>
+                        <segue destination="5Fb-91-OJB" kind="show" identifier="rentByUserSegue" id="Iwy-Bh-ThD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ag-qX-0SA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-384.05797101449281" y="79.017857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Schedules By User View Controller-->
         <scene sceneID="CID-26-kR3">
             <objects>
-                <viewController id="5Fb-91-OJB" sceneMemberID="viewController">
+                <viewController id="5Fb-91-OJB" customClass="SchedulesByUserViewController" customModule="rentex_rent_car" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ih-7f-vqn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="752"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,9 +71,9 @@
                                 <color key="textColor" name="gray300"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ORA-ZK-Nsm">
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="280" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ORA-ZK-Nsm">
                                 <rect key="frame" x="0.0" y="236" width="414" height="516"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="gray100"/>
                                 <connections>
                                     <outlet property="dataSource" destination="5Fb-91-OJB" id="lKi-IB-EcB"/>
                                     <outlet property="delegate" destination="5Fb-91-OJB" id="VY3-cL-Bqc"/>
@@ -84,7 +84,8 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQN-OV-SWJ">
                                         <rect key="frame" x="10" y="5" width="302.5" height="65.5"/>
-                                        <string key="text">Seus agendamentos,estão aqui.</string>
+                                        <string key="text">Seus agendamentos,
+estão aqui.</string>
                                         <fontDescription key="fontDescription" name="Archivo-Bold" family="Archivo" pointSize="30"/>
                                         <color key="textColor" name="white"/>
                                         <nil key="highlightedColor"/>
@@ -115,7 +116,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o06-5Q-MDn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="gray100"/>
                         <constraints>
                             <constraint firstItem="hJd-ve-GXn" firstAttribute="leading" secondItem="o06-5Q-MDn" secondAttribute="leading" id="DDJ-ND-NUM"/>
                             <constraint firstItem="ORA-ZK-Nsm" firstAttribute="leading" secondItem="o06-5Q-MDn" secondAttribute="leading" id="Ken-sk-jIS"/>
@@ -132,6 +133,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="my9-9s-7oO"/>
+                    <connections>
+                        <outlet property="labTotalSchedules" destination="9R7-Ll-RSX" id="eOa-hT-jbY"/>
+                        <outlet property="tableView" destination="ORA-ZK-Nsm" id="Cl2-uM-joK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DBM-yW-3k0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -25,7 +25,7 @@ protocol PostDelegate {
 	
 }
 
-protocol SchedulesByUser {
+protocol SchedulesByUserDelegate {
 	func didUpdateRequestSchedulesByUser(_ data: [SchedulesByUserModel])
 	func didFailWithErrorSchedulesByUser(_ error:Error)
 	
@@ -36,7 +36,7 @@ struct RequestManager {
 	var delegateCar: CardDelegate?
 	var delegateSchedules: SchedulesDelegate?
 	var delegatePost: PostDelegate?
-	var delegateSchedulesByUser: SchedulesByUser?
+	var delegateSchedulesByUser: SchedulesByUserDelegate?
 	
 	func fetchData(url: String,typeRequest: String? = "") {
 		

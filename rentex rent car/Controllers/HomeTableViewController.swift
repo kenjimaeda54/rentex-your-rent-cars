@@ -14,7 +14,9 @@ class HomeTableViewController: UITableViewController {
 	var cars: [CarsModel] = []
 	var managerModels = RequestManager()
 	let labQuantityCars = makeLabel("Total de 0")
-
+	let buttonRentByUser = makeButton("Alugados")
+	let defaults = UserDefaults.standard
+	var userId: String?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -38,7 +40,13 @@ class HomeTableViewController: UITableViewController {
 		super.viewDidAppear(animated)
 		
 		prepareViewNavigation()
-	  
+		
+		let haveId = defaults.object(forKey: "userId") as? String
+		buttonRentByUser.isHidden = haveId != nil ? false : true
+		
+		if haveId != nil {
+			 userId = haveId
+		}
 		
 		//para lightContentRefletir precisa o estilo ser .black
 		navigationController?.navigationBar.barStyle = .black
@@ -53,13 +61,13 @@ class HomeTableViewController: UITableViewController {
 	//adicionar view ao navigation bar
 	func prepareViewNavigation() {
 		let imgLogotipo = makeImg("logotipo")
-		let button = makeButton("Alugados")
 		
-		button.addTarget(self, action: #selector(goScreenRentCars), for: .touchUpInside)
+		
+		buttonRentByUser.addTarget(self, action: #selector(goScreenRentCars), for: .touchUpInside)
 		
 		backgroundNavigationBar.addSubview(imgLogotipo)
 		backgroundNavigationBar.addSubview(labQuantityCars)
-		backgroundNavigationBar.addSubview(button)
+		backgroundNavigationBar.addSubview(buttonRentByUser)
 		backgroundNavigationBar.translatesAutoresizingMaskIntoConstraints = false
 				
 		navigationController?.navigationBar.addSubview(backgroundNavigationBar)
@@ -85,9 +93,9 @@ class HomeTableViewController: UITableViewController {
 				labQuantityCars.topAnchor.constraint(equalTo: backgroundNavigationBar.topAnchor,constant: 20),
 				
 				
-				button.trailingAnchor.constraint(equalTo: labQuantityCars.trailingAnchor, constant: 0),
-				button.bottomAnchor.constraint(equalTo: labQuantityCars.topAnchor, constant: -2),
-				button.topAnchor.constraint(equalTo: backgroundNavigationBar.topAnchor, constant: 10)
+				buttonRentByUser.trailingAnchor.constraint(equalTo: labQuantityCars.trailingAnchor, constant: 0),
+				buttonRentByUser.bottomAnchor.constraint(equalTo: labQuantityCars.topAnchor, constant: -2),
+				buttonRentByUser.topAnchor.constraint(equalTo: backgroundNavigationBar.topAnchor, constant: 10)
 				
 				
 			])
@@ -99,6 +107,7 @@ class HomeTableViewController: UITableViewController {
 	
 	
 	@objc func goScreenRentCars() {
+		 performSegue(withIdentifier:  "rentByUserSegue", sender: nil)
 	}
 	
 	
@@ -139,6 +148,12 @@ class HomeTableViewController: UITableViewController {
 			let vc = segue.destination as! DetailsCarViewController
 			vc.car = sender as? CarsModel
 		}
+		
+		if segue.identifier == "rentByUserSegue" {
+			let vc = segue.destination as! SchedulesByUserViewController
+			vc.userId = userId
+		}
+		
 	}
 	
 	
@@ -154,8 +169,6 @@ extension HomeTableViewController:  CardDelegate {
 		
 		
 	}
-	
-	
 	
 	
 	func didFailWithErrorCar(_ error: Error) {
