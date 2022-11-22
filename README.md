@@ -3,9 +3,9 @@ Aluguel de carros consumindo [API](https://github.com/kenjimaeda54/rentex-api-ex
 
 
 ## Feature
-- Abaixo exemplo como alterar entre os estilos de navegacao 
-- Em alguns momentos na aplicacao era todo preto em outros brancos e alguns nao haviam barra de navegacao 
-- Se reparar abaixo criei um helper para trocar as cores de navegacao,nome dado ao helper e makeNavigationController
+- Abaixo exemplo como alterar entre os estilos de navegação 
+- Em alguns momentos na aplicação era todo preto, outros brancos e alguns não haviam barra de navegação 
+- Se reparar abaixo criei um helper para trocar as cores de navegação, nome dado ao helper e makeNavigationController
 
 ```swift
 
@@ -63,10 +63,10 @@ navigationController?.navigationBar.tintColor = .white
 
 ##
 
-- Para lidar com calendario customizado usei a lib [FsCaelndar](https://github.com/WenchaoD/FSCalendar) e as datas [Swift Date](https://cocoapods.org/pods/SwiftDate)
-- Pode usar esse [guia](https://www.youtube.com/watch?v=FipNDF7g9tE) como referencia
-- As datas finais eram atualizadas dinamicamente conforme  selecionada,para realizar esse efeito eu removia a view e criava novamente com a data final
-- Nao pode esquecer de realizar DispatachQueue a cada retorno da  requisiciao ,porque elas sao feitas fora da main
+- Para lidar com calendário customizado usei a lib [FsCaelndar](https://github.com/WenchaoD/FSCalendar) e as datas [Swift Date](https://cocoapods.org/pods/SwiftDate)
+- Pode usar esse [guia](https://www.youtube.com/watch?v=FipNDF7g9tE) como referência
+- As datas finais eram atualizadas dinamicamente conforme  selecionada, para realizar esse efeito eu removia a view e criava novamente com a data final
+- Não pode esquecer de realizar DispatachQueue a cada retorno da  requisição, porque elas são feitas fora da thread  main
 
 ```swfit 
 
@@ -168,7 +168,7 @@ extension RentDateSelectedViewController: FSCalendarDelegate,FSCalendarDataSourc
 ```
 
 ## 
-- As requisicoes foram feitas usando o [Almofire](https://github.com/Alamofire/Alamofire)
+- As requisições foram feitas usando o [Almofire](https://github.com/Alamofire/Alamofire)
 
 ```swift
 func fetchData(url: String,typeRequest: String? = "") {
@@ -237,5 +237,10 @@ func fetchData(url: String,typeRequest: String? = "") {
 
 ```
 
+## Como iniciar o projeto
+- Clone o projeto
+- Navega até a pasta em sistemas unix e cd rentex-your-rent-cars-swift
+- Instala as dependências pod install --repo-update
+- Inicia o xcode, abra o diretório clonado e o  arquivo com a extensão xcworkspace, apos isto e só clicar na aba acima no run > 
 
 
