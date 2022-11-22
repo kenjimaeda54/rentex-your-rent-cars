@@ -10,6 +10,7 @@ import UIKit
 class ReserveCarViewController: UIViewController {
 	
 	//MARK: - IBOUtlet
+	@IBOutlet weak var imgCar: UIImageView!
 	@IBOutlet weak var labPriceTotal: UILabel!
 	@IBOutlet weak var labPriceDetailsTotal: UILabel!
 	@IBOutlet weak var labDateFinal: UILabel!
@@ -38,13 +39,29 @@ class ReserveCarViewController: UIViewController {
 			accesories = car.accessories
 			let priceTotal = car.rent.price * Double(detailsRent.count)
 			priceTotalCurrency = NumberFormatter.localizedString(from: priceTotal as NSNumber, number: .currency)
-			labPriceTotal.text = "\(priceTotalCurrency!)"
-			labPriceDetailsTotal.text = "\(car.rent.price) x \(detailsRent.count)"
-			labName.text = car.name
-			labBrand.text = car.brand
-			labDateInitial.text = initialAndFinalDate["initialDate"]
-			labDateFinal.text = initialAndFinalDate["finalDate"]
-			labPrice.text = "R$\(car.rent.price)"
+			
+			let url = URL(string: car.thumbNail)!
+			
+			DispatchQueue.global().async {
+				if let imagData = try?  Data(contentsOf: url) {
+					
+					DispatchQueue.main.async {
+						self.imgCar.image  = UIImage(data: imagData)
+						self.labPriceTotal.text = "\(self.priceTotalCurrency!)"
+						self.labPriceDetailsTotal.text = "\(car.rent.price) x \(detailsRent.count)"
+						self.labName.text = car.name
+						self.labBrand.text = car.brand
+						self.labDateInitial.text = initialAndFinalDate["initialDate"]
+						self.labDateFinal.text = initialAndFinalDate["finalDate"]
+						self.labPrice.text = "R$\(car.rent.price)"
+						
+					}
+					
+				}
+				
+			}
+			
+		
 			
 		}
 		

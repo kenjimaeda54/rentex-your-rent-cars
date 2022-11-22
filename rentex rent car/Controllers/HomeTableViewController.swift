@@ -26,9 +26,6 @@ class HomeTableViewController: UITableViewController {
 		//registrar .xib essencial
 		//nome identico da classe
 		tableView.register(UINib(nibName: "CarTableViewCell", bundle: nil),forCellReuseIdentifier: "cellCars")
-		
-		
-		
 	
 	}
 	
@@ -39,7 +36,18 @@ class HomeTableViewController: UITableViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
+		
+		
 		prepareViewNavigation()
+	
+		navigationController?.setNavigationBarHidden(false, animated: true)
+		
+		//para lightContentRefletir precisa o estilo ser .black
+		navigationController?.navigationBar.barStyle = .black
+		
+		if let navigation = navigationController?.navigationBar{
+			makeNavigationController(color: "black", navigation: navigation)
+		}
 		
 		let haveId = defaults.object(forKey: "userId") as? String
 		buttonRentByUser.isHidden = haveId != nil ? false : true
@@ -48,12 +56,6 @@ class HomeTableViewController: UITableViewController {
 			 userId = haveId
 		}
 		
-		//para lightContentRefletir precisa o estilo ser .black
-		navigationController?.navigationBar.barStyle = .black
-		
-		if let navigation = navigationController?.navigationBar{
-			makeNavigationController(color: "black", navigation: navigation)
-		}
 	}
 	
 

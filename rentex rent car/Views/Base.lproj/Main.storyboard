@@ -734,6 +734,7 @@ fim do aluguel</string>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="dxs-Fi-gfb"/>
                     <connections>
+                        <outlet property="imgCar" destination="pTD-eL-Vfc" id="n1j-T3-aP1"/>
                         <outlet property="labBrand" destination="hxt-QK-00h" id="qDP-Ut-UEV"/>
                         <outlet property="labDateFinal" destination="jdl-VE-4On" id="taL-hd-Hju"/>
                         <outlet property="labDateInitial" destination="hiS-gf-LTO" id="dZK-XW-r24"/>
