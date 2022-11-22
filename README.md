@@ -68,7 +68,7 @@ navigationController?.navigationBar.tintColor = .white
 - As datas finais eram atualizadas dinamicamente conforme  selecionada, para realizar esse efeito eu removia a view e criava novamente com a data final
 - Não pode esquecer de realizar DispatachQueue a cada retorno da  requisição, porque elas são feitas fora da thread  main
 
-```swfit 
+```swift 
 
 //preparando o calendario
 func prepareFsCalendar(_ dates: [String]) {
